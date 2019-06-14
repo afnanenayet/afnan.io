@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>compilers on Afnan Enayet</title>
+    <link>https://afnan.io/tags/compilers/</link>
+    <description>Recent content in compilers on Afnan Enayet</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 Oct 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://afnan.io/tags/compilers/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Using the Latest LLVM Release on MacOS</title>
+      <link>https://afnan.io/post/2018-10-01-using-the-latest-llvm-release-on-macos/</link>
+      <pubDate>Mon, 01 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://afnan.io/post/2018-10-01-using-the-latest-llvm-release-on-macos/</guid>
+      <description>MacOS is really frustrating with how it handles its libraries and compilers. It is also frustrating because it ships an unspecified version of LLVM, which generally isn&#39;t the latest stable release. You can, however, with a little tweaking, use the latest version of LLVM or GCC on your Mac, and reliably use it for your C and C++ tooling.
+Installation First, you need to install the latest version of LLVM. Most people nowadays are using Homebrew.</description>
+    </item>
+    
+  </channel>
+</rss>

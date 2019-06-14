@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>eisvogel on Afnan Enayet</title>
+    <link>https://afnan.io/tags/eisvogel/</link>
+    <description>Recent content in eisvogel on Afnan Enayet</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 02 Sep 2018 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://afnan.io/tags/eisvogel/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Beautiful PDFs from Your Markdown Notes</title>
+      <link>https://afnan.io/post/2018-09-02-beautiful-pdfs-from-your-markdown-notes/</link>
+      <pubDate>Sun, 02 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://afnan.io/post/2018-09-02-beautiful-pdfs-from-your-markdown-notes/</guid>
+      <description>This is a short post on how I write my notes in Markdown and convert them to beautiful PDFs using pandoc and the eisvogel template. I really like markdown - it&#39;s simple and has just enough formatting features to be useful and expressive. It&#39;s quick, too. I would not write notes in real-time with latex (way too slow), but it&#39;s perfectly doable with Markdown.
+You can turn Markdown files into PDFs that look like this:</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>learning on Afnan Enayet</title>
+    <link>https://afnan.io/tags/learning/</link>
+    <description>Recent content in learning on Afnan Enayet</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 31 Oct 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://afnan.io/tags/learning/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Diagnosing livers with machine learning</title>
+      <link>https://afnan.io/post/2017-10-31-using-k-means-clustering-in-scikit-learn/</link>
+      <pubDate>Tue, 31 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://afnan.io/post/2017-10-31-using-k-means-clustering-in-scikit-learn/</guid>
+      <description>We will examine an unlabeled dataset of recorded data about livers that are believed to be indicative of liver disorders/liver disease, as well as the frequency of drinks per day per person to create a model. We will use K-means clustering to find interesting groups/clusters within the dataset. We will also use cross validation and ensemble learning to fine-tune the model.
+Exploring the data We will examine the traits of the liver dataset so we can understand the relationships in the data and understand the shape of the dataset.</description>
+    </item>
+    
+    <item>
+      <title>Explaining Gradient Descent</title>
+      <link>https://afnan.io/post/2017-09-28-explaining-gradient-descent/</link>
+      <pubDate>Thu, 28 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://afnan.io/post/2017-09-28-explaining-gradient-descent/</guid>
+      <description>A classic statistics problem In machine learning, problems are often framed as optimization problems. For example, let us take one of the simplest applications of supervised learning: the linear regression. It&#39;s conceptually an easy problem - given a set of data points, create a function \( f = ax + b \) that best approximates these points. If you ever took statistics or have used excel, this is the line of best fit.</description>
+    </item>
+    
+  </channel>
+</rss>

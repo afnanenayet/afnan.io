@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Exposing terminal variables with C</title>
+        
+        <style>
+
+    html body {
+        font-family: 'Raleway', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: red;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://afnan.io/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/rust.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/c.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/cpp.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.55.6" />
+        
+
+        
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-57800813-3"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)};
+          gtag('js', new Date());
+
+          gtag('config', 'UA-57800813-3');
+        </script>
+        
+    </head>
+
+    
+    
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+
+    <body>
+         
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">Exposing terminal variables with C</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/">Home</a></li>
+                            
+                                <li><a href="/about/">About</a></li>
+                            
+                                <li><a href="/post/">Posts</a></li>
+                            
+                                <li><a href="/project/">Projects</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="mailto:afnan@afnan.io"><i class="fa fa-envelope-o"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/afnanenayet"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/afnanenayet"><i class="fa fa-linkedin"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main>
+
+    <div class="item">
+
+    
+    
+    
+
+    
+      
+
+    <h4><a href="/post/2017-09-27-exposing-terminal-variables-with-c/">Exposing terminal variables with C</a></h4>
+    <h5>Exploring how you can access your terminal variables with a simple C program</h5>
+    
+    <a href="https://afnan.iotags/c"><kbd class="item-tag">c</kbd></a>
+    
+    <a href="https://afnan.iotags/fun"><kbd class="item-tag">fun</kbd></a>
+    
+    <a href="https://afnan.iotags/terminal"><kbd class="item-tag">terminal</kbd></a>
+    
+    <a href="https://afnan.iotags/memory"><kbd class="item-tag">memory</kbd></a>
+    
+    <a href="https://afnan.iotags/short"><kbd class="item-tag">short</kbd></a>
+    
+
+</div>
+
+
+    <br> <div class="text-justify"><p>I was writing a C program that took in some arguments and printed those
+arguments when I encountered some unexpected output -- all of my terminal
+variables.</p>
+
+<h2 id="code">Code</h2>
+
+<p>The code to print out a number of variables is as follows, (I decided to
+continue printing variables through <code>UNSIGNED_LONG</code>).</p>
+
+<pre><code class="language-c">/* Afnan Enayet    leak_data.c
+*
+* A script written to read terminal variables
+*/
+
+#include &lt;stdio.h&gt;
+#include &lt;limits.h&gt;
+
+/****** function prototypes ******/
+
+void print_vars(char **args);
+
+/****** function definitions ******/
+
+int main(int argc, char *argv[])
+{
+    print_vars(argv);
+    return 0;
+}
+
+void print_vars(char **args)
+{
+    const unsigned long loop_limit = ULONG_MAX;
+
+    // Reading arguments from memory addresses outside of the program
+    // (should bleed into term vars)
+    // Prints lines in the following format...
+    // address: string corresponding to that address
+    for (int i = 0; i &lt; loop_limit; i++) {
+        printf(&quot;%p: %s\n&quot;, args + i, args[i]);
+    }
+}
+</code></pre>
+
+<p>Compilation: <code>clang leak_data.c -o leak</code></p>
+
+<h2 id="what-it-gives-us">What it gives us</h2>
+
+<p>The code runs and prints out the first couple of arguments, if any were supplied.
+The first argument will be the name of the program. The next couple of lines will
+be the arguments that were supplied. After that, things get interesting. Let's
+look at the output I got.</p>
+
+<p>I ran <code>./leak arg1 arg2 arg3</code></p>
+
+<pre><code class="language-sh">0x7ffeebc30820: ./leak
+0x7ffeebc30828: arg1
+0x7ffeebc30830: arg2
+0x7ffeebc30838: arg3
+0x7ffeebc30840: (null)
+0x7ffeebc30848: TERM_SESSION_ID=w1t0p0:2143472D-FCA6-48BF-986B-C4BC658CE8A1
+0x7ffeebc30850: SSH_AUTH_SOCK=/private/tmp/com.apple.launchd.Eger9zAfyh/Listeners
+0x7ffeebc30858: Apple_PubSub_Socket_Render=/private/tmp/com.apple.launchd.kys2B1tfHZ/Render
+0x7ffeebc30860: COLORFGBG=12;8
+0x7ffeebc30868: ITERM_PROFILE=Default
+0x7ffeebc30870: XPC_FLAGS=0x0
+0x7ffeebc30878: LANG=en_US.UTF-8
+0x7ffeebc30880: PWD=/Users/aenayet/Documents/Programming/ptr_hack
+0x7ffeebc30888: SHELL=/bin/zsh
+0x7ffeebc30890: TERM_PROGRAM_VERSION=3.1.2
+0x7ffeebc30898: TERM_PROGRAM=iTerm.app
+0x7ffeebc308a0: PATH=/Users/aenayet/.cargo/bin:/usr/local/opt/curl/bin:/usr/local/sbin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Library/TeX/texbin:/usr/local/MacGPG2/bin:/opt/X11/bin
+0x7ffeebc308a8: DISPLAY=/private/tmp/com.apple.launchd.N2bb7ZxPPp/org.macosforge.xquartz:0
+0x7ffeebc308b0: COLORTERM=truecolor
+0x7ffeebc308b8: TERM=xterm-256color
+0x7ffeebc308c0: HOME=/Users/aenayet
+0x7ffeebc308c8: TMPDIR=/var/folders/1x/hmr55rhn6t79cz0bd5jkrsy40000gn/T/
+0x7ffeebc308d0: USER=aenayet
+0x7ffeebc308d8: XPC_SERVICE_NAME=0
+0x7ffeebc308e0: LOGNAME=aenayet
+0x7ffeebc308e8: __CF_USER_TEXT_ENCODING=0x0:0:0
+0x7ffeebc308f8: SHLVL=1
+0x7ffeebc30900: OLDPWD=/Users/aenayet/Documents/Programming
+0x7ffeebc30908: ZSH=/Users/aenayet/.oh-my-zsh
+0x7ffeebc30910: PAGER=less
+0x7ffeebc30918: LESS=-R
+0x7ffeebc30920: LC_CTYPE=en_US.UTF-8
+0x7ffeebc30928: LSCOLORS=Gxfxcxdxbxegedabagacad
+0x7ffeebc30930: AUTOJUMP_SOURCED=1
+0x7ffeebc30938: AUTOJUMP_ERROR_PATH=/Users/aenayet/Library/autojump/errors.log
+0x7ffeebc30940: EDITOR=nvim
+0x7ffeebc30948: ARCHFLAGS=-arch x86_64
+0x7ffeebc30958: RUST_SRC=~/rust_src/rust
+0x7ffeebc30960: RUST_SRC_PATH=~/rust_src/rust
+0x7ffeebc30968: TEST=hello
+0x7ffeebc30970: _=/Users/aenayet/Documents/Programming/ptr_hack/./leak
+0x7ffeebc30978: (null)
+0x7ffeebc30980: executable_path=./leak
+0x7ffeebc30988:
+0x7ffeebc30990:
+0x7ffeebc30998:
+0x7ffeebc309a0: main_stack=
+0x7ffeebc309a8: executable_file=0x1801000004,0x2000d10b1
+0x7ffeebc309b0: dyld_file=0x1801000004,0x2000b1132
+0x7ffeebc309b8: (null)
+</code></pre>
+
+<p>We can see that <code>arg1</code>, <code>arg2</code>, and <code>arg3</code> are in the memory addresses they're
+supposed to be in. They correspond to <code>argv[1]</code>, <code>argv[2]</code>, and <code>argv[3]</code>,
+respectively. You can see that everything after that is a terminal variable.
+It contains every accessible <code>$VARIABLE</code>.</p>
+
+<p>This isn't a security leak, since the path and other variables are need to
+be accessible to programs anyway. I thought it was interesting because I
+haven't ever noticed this before, and I enjoy tinkering with things like
+this. You can see that the address of the executable file is also supplied at
+the end of the stack. After that, the program tries to access restricted
+memory, and segfaults.</p>
+</div>
+
+    
+    
+
+    
+
+        <h4 class="page-header">Related</h4>
+
+         <div class="item">
+
+    
+    
+    
+
+    
+      
+
+    <h4><a href="/post/2018-10-01-using-the-latest-llvm-release-on-macos/">Using the Latest LLVM Release on MacOS</a></h4>
+    <h5>Reliably use the latest clang tooling on your Mac</h5>
+    
+    <a href="https://afnan.iotags/llvm"><kbd class="item-tag">llvm</kbd></a>
+    
+    <a href="https://afnan.iotags/clang"><kbd class="item-tag">clang</kbd></a>
+    
+    <a href="https://afnan.iotags/compilers"><kbd class="item-tag">compilers</kbd></a>
+    
+    <a href="https://afnan.iotags/macos"><kbd class="item-tag">macos</kbd></a>
+    
+    <a href="https://afnan.iotags/c"><kbd class="item-tag">c</kbd></a>
+    
+    <a href="https://afnan.iotags/c&#43;&#43;"><kbd class="item-tag">c&#43;&#43;</kbd></a>
+    
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+      
+
+    <h4><a href="/post/2018-04-12-my-neovim-development-setup/">My Neovim Development Setup</a></h4>
+    <h5>An update to my last neovim guide</h5>
+    
+    <a href="https://afnan.iotags/neovim"><kbd class="item-tag">neovim</kbd></a>
+    
+    <a href="https://afnan.iotags/vim"><kbd class="item-tag">vim</kbd></a>
+    
+    <a href="https://afnan.iotags/deoplete"><kbd class="item-tag">deoplete</kbd></a>
+    
+    <a href="https://afnan.iotags/dein"><kbd class="item-tag">dein</kbd></a>
+    
+    <a href="https://afnan.iotags/cquery"><kbd class="item-tag">cquery</kbd></a>
+    
+    <a href="https://afnan.iotags/language"><kbd class="item-tag">language</kbd></a>
+    
+    <a href="https://afnan.iotags/server"><kbd class="item-tag">server</kbd></a>
+    
+    <a href="https://afnan.iotags/python"><kbd class="item-tag">python</kbd></a>
+    
+    <a href="https://afnan.iotags/c"><kbd class="item-tag">c</kbd></a>
+    
+    <a href="https://afnan.iotags/c&#43;&#43;"><kbd class="item-tag">c&#43;&#43;</kbd></a>
+    
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+      
+
+    <h4><a href="/post/2017-07-29-debugging-c-with-gdb-and-valgrind/">Debugging C with GDB and Valgrind</a></h4>
+    <h5>Looking at how you can use GDB/LLDB with Valgrind to debug C code</h5>
+    
+    <a href="https://afnan.iotags/c"><kbd class="item-tag">C</kbd></a>
+    
+    <a href="https://afnan.iotags/lldb"><kbd class="item-tag">lldb</kbd></a>
+    
+    <a href="https://afnan.iotags/gdb"><kbd class="item-tag">gdb</kbd></a>
+    
+    <a href="https://afnan.iotags/valgrind"><kbd class="item-tag">valgrind</kbd></a>
+    
+    <a href="https://afnan.iotags/memory"><kbd class="item-tag">memory</kbd></a>
+    
+    <a href="https://afnan.iotags/leaks"><kbd class="item-tag">leaks</kbd></a>
+    
+    <a href="https://afnan.iotags/segfault"><kbd class="item-tag">segfault</kbd></a>
+    
+    <a href="https://afnan.iotags/debugging"><kbd class="item-tag">debugging</kbd></a>
+    
+    <a href="https://afnan.iotags/debug"><kbd class="item-tag">debug</kbd></a>
+    
+
+</div>
+ 
+
+    
+
+    
+
+        <h4 class="page-header">Comments</h4>
+
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "afnanenayet" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+
+</main>
+
+        <footer>
+
+            <p class="copyright text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a></p>
+
+        </footer>
+       
+    </body>
+
+</html>
+

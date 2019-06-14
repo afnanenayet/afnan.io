@@ -1,9 +1,10 @@
-baseURL = "http://example.com/"
+baseURL = "https://afnan.io"
 languageCode = "en-us"
 title = "Afnan Enayet"
 theme = "minimal"
 disqusShortname = "afnanenayet" # delete this to disable disqus comments
 googleAnalytics = "UA-57800813-3"
+publishDir = "docs"
 
 [params]
     author = "Afnan Enayet"

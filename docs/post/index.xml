@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Afnan Enayet</title>
+    <link>https://afnan.io/post/</link>
+    <description>Recent content in Posts on Afnan Enayet</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 05 Apr 2019 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://afnan.io/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>A Memory and Space Constant Shuffling Algorithm</title>
+      <link>https://afnan.io/post/2019-04-05-explaining-the-hashed-permutation/</link>
+      <pubDate>Fri, 05 Apr 2019 00:00:00 +0000</pubDate>
+      
+      <guid>https://afnan.io/post/2019-04-05-explaining-the-hashed-permutation/</guid>
+      <description>Andrew Kensler, from Pixar, introduced an interesting technique for generating the permutation of an array in his 2013 paper, Correlated Multi-Jittered Sampling.
+Firstly, let&#39;s look at the naive way of generating a permutation. You construct an array of elements from \(0 \cdots n\), and then you randomly shuffle them. Then, your resulting array (let&#39;s call it A), will have the permuted value for i at A[i].
+from random import shuffle n = 10 permutation = list(range(n)) permutation = shuffle(permutation)  The bright side of this is that it&#39;s really easy to implement and fairly easy to access.</description>
+    </item>
+    
+    <item>
+      <title>Using the Latest LLVM Release on MacOS</title>
+      <link>https://afnan.io/post/2018-10-01-using-the-latest-llvm-release-on-macos/</link>
+      <pubDate>Mon, 01 Oct 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://afnan.io/post/2018-10-01-using-the-latest-llvm-release-on-macos/</guid>
+      <description>MacOS is really frustrating with how it handles its libraries and compilers. It is also frustrating because it ships an unspecified version of LLVM, which generally isn&#39;t the latest stable release. You can, however, with a little tweaking, use the latest version of LLVM or GCC on your Mac, and reliably use it for your C and C++ tooling.
+Installation First, you need to install the latest version of LLVM. Most people nowadays are using Homebrew.</description>
+    </item>
+    
+    <item>
+      <title>Beautiful PDFs from Your Markdown Notes</title>
+      <link>https://afnan.io/post/2018-09-02-beautiful-pdfs-from-your-markdown-notes/</link>
+      <pubDate>Sun, 02 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://afnan.io/post/2018-09-02-beautiful-pdfs-from-your-markdown-notes/</guid>
+      <description>This is a short post on how I write my notes in Markdown and convert them to beautiful PDFs using pandoc and the eisvogel template. I really like markdown - it&#39;s simple and has just enough formatting features to be useful and expressive. It&#39;s quick, too. I would not write notes in real-time with latex (way too slow), but it&#39;s perfectly doable with Markdown.
+You can turn Markdown files into PDFs that look like this:</description>
+    </item>
+    
+    <item>
+      <title>My Neovim Development Setup</title>
+      <link>https://afnan.io/post/2018-04-12-my-neovim-development-setup/</link>
+      <pubDate>Thu, 12 Apr 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://afnan.io/post/2018-04-12-my-neovim-development-setup/</guid>
+      <description>It&#39;s been a while since I wrote about my Neovim setup. Since my last post, my nvim config has grown to be a little more sophisticated, and I finally worked out autocompletion and linting for all of the languages I work with.
+Here&#39;s what my editor looks like:
+
+I have posted my full neovim configuration on Github
+Split up your init.vim I had a horribly long init.vim file before. It gets clunky to manage and long files are ugly.</description>
+    </item>
+    
+    <item>
+      <title>All possible encodings from a numerical mapping</title>
+      <link>https://afnan.io/post/2018-03-12-all-possible-encodings-from-numerical-mapping/</link>
+      <pubDate>Mon, 12 Mar 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://afnan.io/post/2018-03-12-all-possible-encodings-from-numerical-mapping/</guid>
+      <description>I haven&#39;t done interview prep in a while, and I decided to get back into it after I saw a practice problem that caught my eye. I got it from this mailing list.
+The problem Suppose we have a mapping of letters to numbers, or an encoding, such that \(a = 1, b = 2, \cdots z = 26\).
+Given a string of digits, find the number of possible ways that this message could be decoded.</description>
+    </item>
+    
+    <item>
+      <title>Parallel Microservices with Dependencies</title>
+      <link>https://afnan.io/post/2018-01-01-parallel-microservices-and-dependencies/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://afnan.io/post/2018-01-01-parallel-microservices-and-dependencies/</guid>
+      <description>You can find the link to the actual code here.
+The problem Right now, I&#39;m a software engineering intern on the infrastructure team at Blend Labs. We run a standard microservice architecture over k8s running on AWS instances. Internal apps make it convenient to run and deploy microservices, abstracting away a lot of k8s stuff. It&#39;s simple. You just register an image or a git repo and let our tools do the rest.</description>
+    </item>
+    
+    <item>
+      <title>Diagnosing livers with machine learning</title>
+      <link>https://afnan.io/post/2017-10-31-using-k-means-clustering-in-scikit-learn/</link>
+      <pubDate>Tue, 31 Oct 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://afnan.io/post/2017-10-31-using-k-means-clustering-in-scikit-learn/</guid>
+      <description>We will examine an unlabeled dataset of recorded data about livers that are believed to be indicative of liver disorders/liver disease, as well as the frequency of drinks per day per person to create a model. We will use K-means clustering to find interesting groups/clusters within the dataset. We will also use cross validation and ensemble learning to fine-tune the model.
+Exploring the data We will examine the traits of the liver dataset so we can understand the relationships in the data and understand the shape of the dataset.</description>
+    </item>
+    
+    <item>
+      <title>Explaining Gradient Descent</title>
+      <link>https://afnan.io/post/2017-09-28-explaining-gradient-descent/</link>
+      <pubDate>Thu, 28 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://afnan.io/post/2017-09-28-explaining-gradient-descent/</guid>
+      <description>A classic statistics problem In machine learning, problems are often framed as optimization problems. For example, let us take one of the simplest applications of supervised learning: the linear regression. It&#39;s conceptually an easy problem - given a set of data points, create a function \( f = ax + b \) that best approximates these points. If you ever took statistics or have used excel, this is the line of best fit.</description>
+    </item>
+    
+    <item>
+      <title>Exposing terminal variables with C</title>
+      <link>https://afnan.io/post/2017-09-27-exposing-terminal-variables-with-c/</link>
+      <pubDate>Wed, 27 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://afnan.io/post/2017-09-27-exposing-terminal-variables-with-c/</guid>
+      <description>I was writing a C program that took in some arguments and printed those arguments when I encountered some unexpected output -- all of my terminal variables.
+Code The code to print out a number of variables is as follows, (I decided to continue printing variables through UNSIGNED_LONG).
+/* Afnan Enayet leak_data.c * * A script written to read terminal variables */ #include &amp;lt;stdio.h&amp;gt; #include &amp;lt;limits.h&amp;gt; /****** function prototypes ******/ void print_vars(char **args); /****** function definitions ******/ int main(int argc, char *argv[]) { print_vars(argv); return 0; } void print_vars(char **args) { const unsigned long loop_limit = ULONG_MAX; // Reading arguments from memory addresses outside of the program // (should bleed into term vars) // Prints lines in the following format.</description>
+    </item>
+    
+    <item>
+      <title>Debugging C with GDB and Valgrind</title>
+      <link>https://afnan.io/post/2017-07-29-debugging-c-with-gdb-and-valgrind/</link>
+      <pubDate>Sat, 29 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://afnan.io/post/2017-07-29-debugging-c-with-gdb-and-valgrind/</guid>
+      <description>Debugging C can be a chore, but being able to pinpoint your memory leaks with Valgrind and monitoring the flow of your program with GDB (or LLDB) can speed up the development of your code significantly. It&#39;s a significant improvement over sticking a bunch of printf statements in your code and taking them out before production (which should by no means be your sole tool for debugging).
+Setup Installing gdb is pretty easy on both OS X and Linux.</description>
+    </item>
+    
+    <item>
+      <title>A Primer on Pointers</title>
+      <link>https://afnan.io/post/2017-07-27-a-primer-on-pointers/</link>
+      <pubDate>Thu, 27 Jul 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://afnan.io/post/2017-07-27-a-primer-on-pointers/</guid>
+      <description>A lot of people have trouble grasping manual memory management when they first encounter it. The syntax can be a little confusing and debugging can be an extremely painful process - whether you have a segfault or Valgrind is complaining that you still have memory leaks.
+Using pointers in C, while a little intimidating at first, is not as difficult as most people expect.
+C gives you a lot of access to memory - you can allocate bytes for use in your program, you can deallocate them, you can directly access memory addresses in your program, and pass them around wherever you want.</description>
+    </item>
+    
+    <item>
+      <title>Creating a website with GAE, Travis, and Jekyll</title>
+      <link>https://afnan.io/post/2017-07-06-make-a-website/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://afnan.io/post/2017-07-06-make-a-website/</guid>
+      <description>Recently, I decided that I wanted to change the look of my website. I&#39;m not really a web developer so I wanted a simple setup. I like Markdown, especially the way Github renders markdown documentation.
+Feel free to modify/check out the source for this website.
+Setup Setting up Jekyll is pretty simple - it&#39;s a Ruby gem so you have to install Ruby. I have Homebrew, so it was as simple as</description>
+    </item>
+    
+    <item>
+      <title>Setting up Neovim</title>
+      <link>https://afnan.io/post/2017-07-12-supercharge-nvim/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://afnan.io/post/2017-07-12-supercharge-nvim/</guid>
+      <description>Note: You can find an updated version of this article here
+ Vim is an excellent text editor. It&#39;s fast and has a light footprint, and tends to be installed in most Unix systems you&#39;ll come across. You can use it across SSH, and once you get the hang of the keybindings, you&#39;ll find that it&#39;s actually very fast to use.
+Neovim tries to strip some of the cruft of Vim.</description>
+    </item>
+    
+  </channel>
+</rss>

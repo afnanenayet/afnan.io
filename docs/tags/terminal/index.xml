@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>terminal on Afnan Enayet</title>
+    <link>https://afnan.io/tags/terminal/</link>
+    <description>Recent content in terminal on Afnan Enayet</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Wed, 27 Sep 2017 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://afnan.io/tags/terminal/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Exposing terminal variables with C</title>
+      <link>https://afnan.io/post/2017-09-27-exposing-terminal-variables-with-c/</link>
+      <pubDate>Wed, 27 Sep 2017 00:00:00 +0000</pubDate>
+      
+      <guid>https://afnan.io/post/2017-09-27-exposing-terminal-variables-with-c/</guid>
+      <description>I was writing a C program that took in some arguments and printed those arguments when I encountered some unexpected output -- all of my terminal variables.
+Code The code to print out a number of variables is as follows, (I decided to continue printing variables through UNSIGNED_LONG).
+/* Afnan Enayet leak_data.c * * A script written to read terminal variables */ #include &amp;lt;stdio.h&amp;gt; #include &amp;lt;limits.h&amp;gt; /****** function prototypes ******/ void print_vars(char **args); /****** function definitions ******/ int main(int argc, char *argv[]) { print_vars(argv); return 0; } void print_vars(char **args) { const unsigned long loop_limit = ULONG_MAX; // Reading arguments from memory addresses outside of the program // (should bleed into term vars) // Prints lines in the following format.</description>
+    </item>
+    
+  </channel>
+</rss>

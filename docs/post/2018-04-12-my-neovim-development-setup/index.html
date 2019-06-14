@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>My Neovim Development Setup</title>
+        
+        <style>
+
+    html body {
+        font-family: 'Raleway', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: red;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://afnan.io/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/rust.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/c.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/cpp.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.55.6" />
+        
+
+        
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-57800813-3"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)};
+          gtag('js', new Date());
+
+          gtag('config', 'UA-57800813-3');
+        </script>
+        
+    </head>
+
+    
+    
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+
+    <body>
+         
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">My Neovim Development Setup</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/">Home</a></li>
+                            
+                                <li><a href="/about/">About</a></li>
+                            
+                                <li><a href="/post/">Posts</a></li>
+                            
+                                <li><a href="/project/">Projects</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="mailto:afnan@afnan.io"><i class="fa fa-envelope-o"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/afnanenayet"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/afnanenayet"><i class="fa fa-linkedin"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main>
+
+    <div class="item">
+
+    
+    
+    
+
+    
+      
+
+    <h4><a href="/post/2018-04-12-my-neovim-development-setup/">My Neovim Development Setup</a></h4>
+    <h5>An update to my last neovim guide</h5>
+    
+    <a href="https://afnan.iotags/neovim"><kbd class="item-tag">neovim</kbd></a>
+    
+    <a href="https://afnan.iotags/vim"><kbd class="item-tag">vim</kbd></a>
+    
+    <a href="https://afnan.iotags/deoplete"><kbd class="item-tag">deoplete</kbd></a>
+    
+    <a href="https://afnan.iotags/dein"><kbd class="item-tag">dein</kbd></a>
+    
+    <a href="https://afnan.iotags/cquery"><kbd class="item-tag">cquery</kbd></a>
+    
+    <a href="https://afnan.iotags/language"><kbd class="item-tag">language</kbd></a>
+    
+    <a href="https://afnan.iotags/server"><kbd class="item-tag">server</kbd></a>
+    
+    <a href="https://afnan.iotags/python"><kbd class="item-tag">python</kbd></a>
+    
+    <a href="https://afnan.iotags/c"><kbd class="item-tag">c</kbd></a>
+    
+    <a href="https://afnan.iotags/c&#43;&#43;"><kbd class="item-tag">c&#43;&#43;</kbd></a>
+    
+
+</div>
+
+
+    <br> <div class="text-justify"><p>It's been a while since I wrote about my Neovim setup. Since my last post, my
+<code>nvim</code> config has grown to be a little more sophisticated, and I finally worked
+out autocompletion and linting for all of the languages I work with.</p>
+
+<p>Here's what my editor looks like:</p>
+
+<p><figure><img src="/images/nvim_1.png" alt="neovim rust"></figure></p>
+
+<p>I have posted my full neovim configuration on
+<a href="https://github.com/afnanenayet/nvim-dotfiles">Github</a></p>
+
+<h2 id="split-up-your-initvim">Split up your <code>init.vim</code></h2>
+
+<p>I had a horribly long <code>init.vim</code> file before. It gets clunky to manage and long
+files are ugly. It's highly recommended that you split up your <code>init.vim</code> files
+into more manageable chunks. The way you can do this is by sourcing each chunk
+in your main init.vim file. Suppose we have a file for our deoplete settings,
+and another file for our language client settings. Our <code>init.vim</code> file could
+look something like this:</p>
+
+<pre><code class="language-vim">source $HOME/.config/nvim/config/deoplete.vim
+source $HOME/.config/nvim/config/lc.vim
+</code></pre>
+
+<p>And in <code>config/lc.vim</code> and <code>config/deoplete.vim</code>, you could have whatever
+settings pertaining to each plugin that you want. I personally have my config
+files split up in the following manner:</p>
+
+<pre><code>config
+├── 01.plugins.vim
+├── 02.init.vim
+├── 03.powerline.vim
+├── 04.deoplete.vim
+├── 05.language_client.vim
+└── 06.keybindings.vim
+</code></pre>
+
+<p>My <code>init.vim</code> file looks like this:</p>
+
+<pre><code class="language-vim">for f in split(glob('~/.config/nvim/config/*.vim'), '\n')
+    exe 'source' f
+endfor
+</code></pre>
+
+<p><em>Credit: Thanks to Igor Epstein for pointing out I can use a regex to grab
+multiple files in a directory and clean up my init.vim config.</em></p>
+
+<p>Note that I had to put the <code>plugins.vim</code> file first because it contains
+everything pertaining to my package manager, dein, and dein has some scripts it
+needs to run first in Neovim. The order that you put these scripts in does
+matter, as they effectively will be set up in order.  Everything in
+<code>plugins.vim</code> will be run before everything in the other files in my case.
+<code>init.vim</code> files can get messy, and this offers a way to clean up your setup
+and separate your neovim/vim config into logical units.</p>
+
+<h2 id="managing-packages">Managing packages</h2>
+
+<p>There are a lot of package managers for Neovim/vim out there. People have
+different preferences, I have no strong feelings one way or the other. I
+personally use <a href="https://github.com/Shougo/dein.vim">dein</a>, which has served me
+pretty well. It uses all of the great async features in Vim 8/Neovim and is
+pretty easy to use.</p>
+
+<p>My <code>plugins.vim</code> file has all of the settings pertaining to dein, as well as
+the dein startup scripts that it needs to run when vim/nvim boots up.</p>
+
+<p>After setting it up, installing plugins is as easy as:</p>
+
+<pre><code class="language-vim">call dein#install(&quot;github-username/repo-name&quot;)
+</code></pre>
+
+<p>Note that it doesn't automatically update plugins by default. I manually update
+my plugins. You can just call <code>:call dein#update()</code> in Neovim, and dein will
+upgrade all of your plugins for you.</p>
+
+<h2 id="autocompletion-and-linting">Autocompletion and Linting</h2>
+
+<p>I used to use <a href="https://github.com/Shougo/deoplete.nvim">deoplete</a> for my
+autocompletion needs. I ended up switching to
+<a href="https://github.com/ncm2/ncm2">ncm2</a> because I wanted to try out something new.
+So far, I've had an identical experience with both engines, so I think you will
+be fine regardless of which language client you use. I've heard excellent
+things about <a href="https://github.com/neoclide/coc.nvim">coc-nvim</a> (which stands for
+&quot;conqueror of completion.&quot; It aims to provide a fully fledged visual studio
+code-esque editing experience for neovim. I personally think it's a really
+heavy plugin, and whenever I feel that neovim doesn't suit my needs, I use
+VSCode directly. However, if you don't want to use VSCode, and you want the
+same quality of extensions, coc is the way to go, since VSCode has some quirks
+and mistakes in its implementation of the language client spec, and many
+language servers and plugins exclusively test against VSCode.</p>
+
+<h3 id="configuring-deoplete">Configuring Deoplete</h3>
+
+<p><em>I don't use deoplete anymore, but I have left this part of my article up just
+in case someone might find it useful. If this becomes out of date and ceases to
+be useful, please let me know.</em></p>
+
+<p>Deoplete is powered by completion sources, and it has a few default ones that
+really annoyed me. For example, buffer based completion was fairly unhelpful
+for me. I don't want autocompletion in a markdown or text file, and I only want
+to have completion from meaningful symbols. You can set the completion sources
+for deoplete, and also have completion enabled on a per-buffer basis.</p>
+
+<p>I have deoplete completion disabled by default</p>
+
+<pre><code class="language-vim">&quot; disable autocomplete by default
+let b:deoplete_disable_auto_complete=1
+let g:deoplete_disable_auto_complete=1
+</code></pre>
+
+<p>I also set sources to be empty by default</p>
+
+<pre><code class="language-vim">let g:deoplete#sources = {}
+</code></pre>
+
+<p>And lastly, I don't want any autocompletion when I'm writing strings and
+comments.</p>
+
+<pre><code class="language-vim">&quot; Disable the candidates in Comment/String syntaxes.
+call deoplete#custom#source('_',
+            \ 'disabled_syntaxes', ['Comment', 'String'])
+</code></pre>
+
+<p>You can set sources per language like this</p>
+
+<pre><code class="language-vim">call deoplete#custom#option('sources', {
+    \ 'python': ['LanguageClient'],
+\})
+</code></pre>
+
+<p>and replace <code>python</code> which whatever language(s) you want.</p>
+
+<p><em>Note: thanks to Steve Vermeulen for notifying me about the new convention for
+setting language server settings due to updates from deoplete.</em></p>
+
+<h3 id="completion-sources-and-language-servers">Completion sources and language servers</h3>
+
+<p>If you want to use a language client, I would suggest using the
+<a href="https://github.com/autozimu/LanguageClient-neovim">LanguageClient-neovim</a>
+plugin. Note that this source is called <code>LanguageClient</code>, so if you want to use
+a language server for a language, you need to set it up for the LanguageClient
+plugin, then set the source for that language to be <code>LanguageClient</code>. One thing
+that tripped me up when trying to set up sources for deoplete was that I didn't
+find good documentation for what each plugin is named. For example,
+<code>deoplete-rust</code> uses <code>racer</code>, but the name of the source is <code>rust</code>, but
+<code>deoplete-jedi</code> has a source called <code>jedi</code>.</p>
+
+<p>Here are some sources/language servers you can use (I've included the names of
+the sources for entries that aren't language servers).</p>
+
+<ul>
+<li>python:
+
+<ul>
+<li><a href="https://github.com/zchee/deoplete-jedi">deoplete-jedi</a> (source) <code>jedi</code></li>
+<li><a href="https://github.com/palantir/python-language-server">pyls</a> (language server)</li>
+</ul></li>
+<li>rust:
+
+<ul>
+<li><a href="https://github.com/sebastianmarkow/deoplete-rust">deoplete-rust</a> (source) <code>rust</code></li>
+<li><a href="https://github.com/rust-lang-nursery/rls/">rls</a> (language server)</li>
+</ul></li>
+<li>C/C++:
+
+<ul>
+<li><a href="https://github.com/Shougo/deoplete-clangx">deoplete-clangx</a> (source) <code>clangx</code></li>
+<li><a href="https://github.com/MaskRay/ccls">ccls</a> (language server) note
+that I've found this to be the most effective solution for large projects.
+<code>ccls</code> is a fork of <code>cquery</code>, which is no longer being actively developed.</li>
+<li><a href="https://clang.llvm.org/extra/clangd.html">clangd</a> (language server)</li>
+</ul></li>
+</ul>
+
+<p>I only use language servers for development (except when editing vim files).</p>
+
+<h2 id="other-plugins">Other plugins</h2>
+
+<p>Some of my other favorite plugins are:</p>
+
+<ul>
+<li><a href="https://github.com/scrooloose/nerdtree">NERD tree</a>: a nice hierarchical file</li>
+<li>browser</li>
+<li><a href="https://github.com/jhawthorn/fzy">fzy</a>: a fast fuzzy file finder I use as to</li>
+<li>search for files and for text within files. You can use this as a replacement
+for the <code>Ctrl+P</code> plugin</li>
+<li><a href="https://github.com/vim-airline/vim-airline/">vim airline</a>: a lean powerline
+plugin for vim</li>
+</ul>
+</div>
+
+    
+    
+
+    
+
+        <h4 class="page-header">Related</h4>
+
+         <div class="item">
+
+    
+    
+    
+
+    
+      
+
+    <h4><a href="/post/2018-10-01-using-the-latest-llvm-release-on-macos/">Using the Latest LLVM Release on MacOS</a></h4>
+    <h5>Reliably use the latest clang tooling on your Mac</h5>
+    
+    <a href="https://afnan.iotags/llvm"><kbd class="item-tag">llvm</kbd></a>
+    
+    <a href="https://afnan.iotags/clang"><kbd class="item-tag">clang</kbd></a>
+    
+    <a href="https://afnan.iotags/compilers"><kbd class="item-tag">compilers</kbd></a>
+    
+    <a href="https://afnan.iotags/macos"><kbd class="item-tag">macos</kbd></a>
+    
+    <a href="https://afnan.iotags/c"><kbd class="item-tag">c</kbd></a>
+    
+    <a href="https://afnan.iotags/c&#43;&#43;"><kbd class="item-tag">c&#43;&#43;</kbd></a>
+    
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+      
+
+    <h4><a href="/post/2017-09-27-exposing-terminal-variables-with-c/">Exposing terminal variables with C</a></h4>
+    <h5>Exploring how you can access your terminal variables with a simple C program</h5>
+    
+    <a href="https://afnan.iotags/c"><kbd class="item-tag">c</kbd></a>
+    
+    <a href="https://afnan.iotags/fun"><kbd class="item-tag">fun</kbd></a>
+    
+    <a href="https://afnan.iotags/terminal"><kbd class="item-tag">terminal</kbd></a>
+    
+    <a href="https://afnan.iotags/memory"><kbd class="item-tag">memory</kbd></a>
+    
+    <a href="https://afnan.iotags/short"><kbd class="item-tag">short</kbd></a>
+    
+
+</div>
+  <div class="item">
+
+    
+    
+    
+
+    
+      
+
+    <h4><a href="/post/2017-07-12-supercharge-nvim/">Setting up Neovim</a></h4>
+    <h5>Tutorial on setting up Neovim with a plugin manager and various helpful plugins</h5>
+    
+    <a href="https://afnan.iotags/neovim"><kbd class="item-tag">neovim</kbd></a>
+    
+    <a href="https://afnan.iotags/vim"><kbd class="item-tag">vim</kbd></a>
+    
+    <a href="https://afnan.iotags/c&#43;&#43;"><kbd class="item-tag">C&#43;&#43;</kbd></a>
+    
+    <a href="https://afnan.iotags/c"><kbd class="item-tag">C</kbd></a>
+    
+    <a href="https://afnan.iotags/dein"><kbd class="item-tag">dein</kbd></a>
+    
+    <a href="https://afnan.iotags/plugins"><kbd class="item-tag">plugins</kbd></a>
+    
+
+</div>
+ 
+
+    
+
+    
+
+        <h4 class="page-header">Comments</h4>
+
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "afnanenayet" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+
+</main>
+
+        <footer>
+
+            <p class="copyright text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a></p>
+
+        </footer>
+       
+    </body>
+
+</html>
+

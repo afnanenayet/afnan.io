@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+         
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Parallel Microservices with Dependencies</title>
+        
+        <style>
+
+    html body {
+        font-family: 'Raleway', sans-serif;
+        background-color: white;
+    }
+
+    :root {
+        --accent: red;
+        --border-width:  5px ;
+    }
+
+</style>
+
+
+<link rel="stylesheet" href="https://afnan.io/css/main.css">
+
+
+
+
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css"> 
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+ 
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/go.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/haskell.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/kotlin.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/scala.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/swift.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/rust.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/c.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/cpp.min.js"></script>  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/languages/python.min.js"></script> 
+
+    <script>hljs.initHighlightingOnLoad();</script>
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+
+<script>$(document).on('click', function() { $('.collapse').collapse('hide'); })</script>
+ <meta name="generator" content="Hugo 0.55.6" />
+        
+
+        
+        
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-57800813-3"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments)};
+          gtag('js', new Date());
+
+          gtag('config', 'UA-57800813-3');
+        </script>
+        
+    </head>
+
+    
+    
+    <script type="text/javascript" async
+      src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+    
+
+    <body>
+         
+        <nav class="navbar navbar-default navbar-fixed-top">
+
+            <div class="container">
+
+                <div class="navbar-header">
+
+                    <a class="navbar-brand visible-xs" href="#">Parallel Microservices with Dependencies</a>
+
+                    <button class="navbar-toggle" data-target=".navbar-collapse" data-toggle="collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                </div>
+
+                <div class="collapse navbar-collapse">
+
+                    
+                        <ul class="nav navbar-nav">
+                            
+                                <li><a href="/">Home</a></li>
+                            
+                                <li><a href="/about/">About</a></li>
+                            
+                                <li><a href="/post/">Posts</a></li>
+                            
+                                <li><a href="/project/">Projects</a></li>
+                            
+                        </ul>
+                    
+
+                    
+                        <ul class="nav navbar-nav navbar-right">
+                            
+                                <li class="navbar-icon"><a href="mailto:afnan@afnan.io"><i class="fa fa-envelope-o"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://github.com/afnanenayet"><i class="fa fa-github"></i></a></li>
+                            
+                                <li class="navbar-icon"><a href="https://www.linkedin.com/in/afnanenayet"><i class="fa fa-linkedin"></i></a></li>
+                            
+                        </ul>
+                    
+
+                </div>
+
+            </div>
+
+        </nav>
+
+
+<main>
+
+    <div class="item">
+
+    
+    
+    
+
+    
+      
+
+    <h4><a href="/post/2018-01-01-parallel-microservices-and-dependencies/">Parallel Microservices with Dependencies</a></h4>
+    <h5>Using simple optimizations to make services run faster</h5>
+    
+    <a href="https://afnan.iotags/infrastructure"><kbd class="item-tag">infrastructure</kbd></a>
+    
+    <a href="https://afnan.iotags/go"><kbd class="item-tag">go</kbd></a>
+    
+    <a href="https://afnan.iotags/microservices"><kbd class="item-tag">microservices</kbd></a>
+    
+    <a href="https://afnan.iotags/parallel"><kbd class="item-tag">parallel</kbd></a>
+    
+    <a href="https://afnan.iotags/dependencies"><kbd class="item-tag">dependencies</kbd></a>
+    
+    <a href="https://afnan.iotags/graphs"><kbd class="item-tag">graphs</kbd></a>
+    
+    <a href="https://afnan.iotags/bfs"><kbd class="item-tag">bfs</kbd></a>
+    
+    <a href="https://afnan.iotags/breadth"><kbd class="item-tag">breadth</kbd></a>
+    
+    <a href="https://afnan.iotags/first"><kbd class="item-tag">first</kbd></a>
+    
+    <a href="https://afnan.iotags/search"><kbd class="item-tag">search</kbd></a>
+    
+    <a href="https://afnan.iotags/concurrency"><kbd class="item-tag">concurrency</kbd></a>
+    
+
+</div>
+
+
+    <br> <div class="text-justify"><p><em>You can find the link to the actual code <a href="https://github.com/blendlabs/go-taskrunner">here</a>.</em></p>
+
+<h2 id="the-problem">The problem</h2>
+
+<p>Right now, I'm a software engineering intern on the infrastructure team at
+<a href="https://blend.com">Blend Labs</a>.
+We run a standard microservice architecture over k8s running on AWS
+instances. Internal apps make it convenient to run and deploy
+microservices, abstracting away a lot of k8s stuff. It's simple. You just
+register an image or a git repo and let our tools do the rest.</p>
+
+<p>Internally, we have our own abstractions to help us deal with k8s stuff so
+it's easier to manage common tasks that we'd like to do with k8s, Docker,
+or etcd. Part of our workflow includes a component called <code>TaskRunner</code> that
+does what you'd expect -- it runs tasks. There is an abstraction called a
+<code>Module</code> that has a logically separated set of <code>tasks</code>. These tasks are assumed
+to be linearly dependent. You have to run them in sequence. A <code>Module</code> has
+a <code>Register()</code> function that adds a set of sequences to a queue for
+<code>TaskRunner</code> to execute.</p>
+
+<p>We realized that not every <code>Module</code> has to be run in a linear order. In fact,
+things would probably be a lot faster if we could specify strict dependencies
+and try to run things in parallel. One immediate issue was that we didn't
+know how long it would take to run each set of steps, or <code>Module</code>, which rules
+out a lot of optimizations.</p>
+
+<h2 id="optimization">Optimization</h2>
+
+<p>You can very easily tell that this is a graph problem. We can abstract each
+<code>Module</code> as a node. A node can keep track of their dependents and dependencies,
+so we effectively have two directional graphs. Every time a <code>Module</code> is
+registered, it also has to specify its dependencies.</p>
+
+<h3 id="acyclic-graphs">Acyclic graphs</h3>
+
+<p>It's pretty important to make sure that the graph doesn't contain a cycle
+so we wrote checks to see if the graph contained a cycle. So how do you
+check to see if a directional graph contains a cycle?</p>
+
+<p>A graph is defined as cyclic if you can start a traversal down a node and
+end up coming back to that node. So you can just arbitrarily pick nodes
+to traverse down, and see if any of these paths lead you back to a node
+that you already visited. Since we're talking about dependencies, you
+might have thought of <a href="https://en.wikipedia.org/wiki/Topological_group">topological graph sorting</a>.
+Topological sorting can actually detect cycles in a graph, but
+topological sort itself won't solve our problems since it resolves
+dependencies in a linear fashion.</p>
+
+<p>It's actually a fairly easy problem to tackle. You need to have a set of
+unvisited nodes, a set of visited nodes, and a set representing the
+nodes in the current traversal stack.</p>
+
+<p>Pick an arbitrary node in the set of unvisited nodes. Begin a traversal
+down this path (depth-first). As you go down the path, add each node to
+the stack, and then after you get through all of the nodes on the stack,
+and you add all of those nodes to the set of visited nodes. When you are
+traversing down the stack, don't visit already visited nodes, and if you
+come across a node in the stack, you know you have a cycle.</p>
+
+<p>If you get through the entire graph without coming across a node in the
+stack, the graph is acyclic.</p>
+
+<p>The pseudocode looks something like this.</p>
+
+<pre><code class="language-python">def check(graph):
+    visited, unvisited, stack = set(), set(), set()
+
+    while len(unvisited) &gt; 0:
+        root = unvisited.remove(random)
+
+        if helper(graph, root, visited, unvisited, stack):
+            return True
+    return False
+
+
+def helper(graph, root, unvisited, visited, stack):
+    &quot;&quot;&quot; returns true if a particular path has a backedge
+    &quot;&quot;&quot;
+    visited.add(root)
+
+    if root in stack:
+        return False
+
+    stack.add(root)
+    return helper(graph, root.child, unvisited, visited, stack)
+</code></pre>
+
+<h3 id="traversing-the-graph">Traversing the graph</h3>
+
+<p>Once we've verified that there are no cycles in the dependency graph,
+we can theoretically run asynchronous breadth-first searches from
+every root in the graph.</p>
+
+<p>Note that this dependency graph will need to have links for dependencies
+and dependents. A task can be run if it has no dependents or if all of
+the dependents have been run/fulfilled. While this can be better optimized,
+at the moment, if a module is completed, the thread checks on all of its
+dependents and if that dependent has all of its dependencies completed, it can
+run. We could spawn off a new thread, but spawning a potentially infinite
+number of threads isn't much good. Our solution involved using a fixed
+number of worker threads that would take accept nodes off of a queue,
+so we could limit the maximum number of threads at any given time.</p>
+
+<h2 id="implementation-details">Implementation details</h2>
+
+<p>Of course, everything is always easier in theory. I had some trouble figuring
+out how to set up the concurrency aspect of the code, but it turns out Go
+actually has some pretty nice concurrency features.</p>
+
+<p>I ended up following <a href="https://gobyexample.com/worker-pools">this</a>
+tutorial, which made things very easy.</p>
+
+<p>When implementing these algorithms, we had a few things to think about. I was
+also new to Go, so I had to get acclimated with Go's concurrency features.</p>
+
+<ul>
+<li>how do we protect the graph from data races?</li>
+<li>how do we manage threading?</li>
+<li>how do we properly shut down the threads?</li>
+</ul>
+
+<p>Turns out, you can take care of all that with <code>chan</code>, go's &quot;channel&quot;. It's
+essentially a messaging system that lets you easily communicate between
+threads. I won't go too in depth into it since the example covers it very
+well.</p>
+</div>
+
+    
+    
+
+    
+
+    
+
+        <h4 class="page-header">Comments</h4>
+
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "afnanenayet" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    
+
+</main>
+
+        <footer>
+
+            <p class="copyright text-muted">&copy; All rights reserved. Powered by <a href="https://gohugo.io">Hugo</a> and <a href="https://github.com/calintat/minimal">Minimal</a></p>
+
+        </footer>
+       
+    </body>
+
+</html>
+
