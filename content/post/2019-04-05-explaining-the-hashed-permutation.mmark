@@ -3,6 +3,7 @@ layout: post
 title: "A Memory and Space Constant Shuffling Algorithm"
 description: "Andrew Kensler's hashed permutation technique"
 date: 2019-04-05
+math: true
 tags: []
 comments: true
 ---

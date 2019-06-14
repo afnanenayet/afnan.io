@@ -5,6 +5,7 @@ description: "A cursory explanation of gradient descent and stochastic gradient 
 date: 2017-09-28
 tags: [machine, learning, gradient, descent, loss, function, math]
 comments: true
+math: true
 ---
 
 ## A classic statistics problem
