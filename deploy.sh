@@ -10,8 +10,6 @@ cd public
 
 rm css/main.scss
 
-git fetch && git merge --no-edit
-
 # Add changes to git.
 git add .
 
