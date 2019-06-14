@@ -53,12 +53,10 @@ is a function that provides a measure of your wrongness, and our objective is to
 minimize it as best as possible. There are several loss functions you can use, a very
 popular loss function is called mean-squared error (MSE).
 
-We define $$ MSE $$ as follows:
+We define $$ \text{MSE} $$ as follows:
 
 $$
-\begin{equation}
-MSE = \frac{1}{n} \sum\_{i = 1}^n (y^{(i)} - f(x^{(i)}))^2
-\end{equation}
+\text{MSE} = \frac{1}{n} \sum\_{i = 1}^n (y^{(i)} - f(x^{(i)}))^2
 $$
 
 In essence, we are taking every row in $$ X $$, making a prediciton with our function
@@ -75,13 +73,13 @@ root will give us the maximum.
 Let us define our loss function $$ L(a) $$ as $$ MSE $$ and find the minimum.
 
 $$
-\begin{align}
+\begin{aligned}
 L(a) &= \frac{1}{n} \sum*{i = 1}^n (y^{(i)} - f(x^{(i)}))^2 \\
 L(a) &= \frac{1}{n} \sum*{i = 1}^n (y^{(i)} - (a^T x^{(i)})^2 \\
 L'(a) &= \frac{1}{n} _ 2 (y^{(i)} - a^T x^{(i)}) _ -x^{(i)} \\
 L'(a) &= -\frac{2}{n} (y^{(i)} - a^T x^{(i)}) x^{(i)} \\
 0 &= -\frac{2}{n} (y^{(i)} - a^T x^{(i)}) x^{(i)}
-\end{align}
+\end{aligned}
 $$
 
 We have our derived function, solving for $$ a $$ will be left as an
@@ -103,9 +101,9 @@ iteration. With each iteration of gradient descent, we set $$ a*{t+1} $$
 equal to some new value as defined below:
 
 $$
-\begin{align}
+\begin{aligned}
 a*t &= a*{t-1} - \alpha f(a\_{t-1})
-\end{align}
+\end{aligned}
 $$
 
 Gradient descent allows us to iteratively minimize the loss function - in other

@@ -13,7 +13,7 @@ out autocompletion and linting for all of the languages I work with.
 
 Here's what my editor looks like:
 
-![neovim rust](/assets/images/nvim_1.png)
+![neovim rust](/images/nvim_1.png)
 
 I have posted my full neovim configuration on
 [Github](https://github.com/afnanenayet/nvim-dotfiles)
@@ -101,8 +101,6 @@ VSCode directly. However, if you don't want to use VSCode, and you want the
 same quality of extensions, coc is the way to go, since VSCode has some quirks
 and mistakes in its implementation of the language client spec, and many
 language servers and plugins exclusively test against VSCode.
-
-### Configuring NCM2
 
 ### Configuring Deoplete
 
