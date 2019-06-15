@@ -20,6 +20,8 @@ A port of the PCG random number generation library, written in pure Rust.
 
 ## [weekend-ray-tracer](https://github.com/afnanenayet/weekend-ray-tracer)
 
+{{< figure src="https://raw.githubusercontent.com/afnanenayet/weekend-ray-tracer/master/docs/sphere_mirror_colors.png" title="Example render from the ray tracer" >}}
+
 A ray tracer written in Rust, which follows Pete Shirley's book, "Ray Tracing
 in One Weekend." It features multithreading, and (soon to be completed)
 serialization.
@@ -56,25 +58,26 @@ A personal website/blog powered by Jekyll and Travis CI. Pushing to
 Github triggers a build from Travis, which ensures that the website
 builds properly. You're looking at it right now!
 
-## Matasano Cryptopals Challenge
+## [Matasano Cryptopals Challenge](https://github.com/afnanenayet/Cryptopals_Challenge)
 
 I am working on the Matasano Cryptopals Challenge, a set of challenges designed
 to teach some of the basics of cryptography. The challenges can be found
-[here](https://cryptopals.com). My solutions, written in C++14, can be found
-[here](https://github.com/afnanenayet/Cryptopals_Challenge).
+[here](https://cryptopals.com).
 
 ## tiny search engine (TSE)
 
 For a software development class, we created a small search engine in C.
 It downloads the contents of a webpage, indexes it, and ranks the results
 of a boolean query and displays it to the user. It follows the Unix development
-philosphy. At the instruction of our professor and the College, the source code
+philosophy. At the instruction of our professor and Dartmouth College, the source code
 cannot be made public, but I can provide the source code upon inquiry.
 Email me if you want to see the source.
 
 ## Android apps
 
 ### FreeLoop
+
+{{<figure src="https://lh3.googleusercontent.com/2bOKwovTi5IxmeRPHzUsjU7nuwp-NaiCQPZgdUy4VTBPXGZa_EqjeM2dwNJIrKT-Q-4=w2560-h1240-rw" title="Screenshot of FreeLoop" height="400em" align="center" >}}
 
 An app that replicates a guitar looper pedal for free. Available on
 the [Play Store](https://play.google.com/store/apps/details?id=com.enayet.loopr).
@@ -88,11 +91,15 @@ design practices.
 
 ### Minigma
 
+{{<figure src="https://lh3.ggpht.com/Rtyv139yzpKhUwUYXfzlQbXNQ5sRMDqjVBcvCKn2-p2WKWpnFi0xwVXUoEkkxF3Dsd0L=w2560-h1240-rw" title="Screenshot of Minigma" height="400em" align="center" >}}
+
 An encryption app that utilizes Android intents to allow a user to send encrypted
 messages through any app on their phone. Download on the
 [Play Store](https://play.google.com/store/apps/details?id=com.enayet.minigma).
 
 ### Battery Informatics
+
+{{<figure src="https://lh3.googleusercontent.com/u2C77NoAFHA4sd93rGIeL22uEH0CqO0ziOICkDnNu-xWD1Q-iiZ9qgQsbXfsMTlKgPjT=w2560-h1240-rw" title="Screenshot of Battery Informatics" height="400em" align="center" >}}
 
 Provides diagnostic information about a phone's battery, including charge
 capacity, temperature, and rate of discharge. Download on the
