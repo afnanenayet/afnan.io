@@ -35,6 +35,8 @@ available on the usual public key servers. You can also access it
 #### Works
 
 - Orthogonal Array Sampling for Monte Carlo Rendering (accepted EGSR/CGF 2019)
+- [Undergraduate thesis: Orthogonal Array Sampling for Monte Carlo
+  Rendering](/documents/undergrad_thesis.pdf)
 - [Replacing transistors with nanomagnets for computation
   (2015)](/documents/replacing_transistors_nanomagnets.pdf)
 
