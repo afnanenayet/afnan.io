@@ -5,6 +5,15 @@ title: Projects
 description: "Personal projects and other work"
 ---
 
+## [oars](https://github.com/afnanenayet/oars)
+
+A rust library for orthogonal array generation and verification. It contains
+constructors for orthogonal arrays as well as functions that can verify whether
+a given point set is a valid (strong) orthogonal array. Development is
+currently in progress, as we are currently working on efficiently generating
+strong orthogonal arrays. The library is available at
+[crates.io](https://crates.io/crates/oars).
+
 ## [pcg-rs](https://github.com/afnanenayet/pcg-rs)
 
 A port of the PCG random number generation library, written in pure Rust.
