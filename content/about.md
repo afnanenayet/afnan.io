@@ -25,9 +25,10 @@ available on the usual public key servers. You can also access it
 ### Professional
 
 - Incoming software engineer at Blend Labs on the infrastructure team
-- Intern at Capital One doing machine learning work with Payments API team
-- Intern for Blend Labs on the infrastructure team
-- Intern at Microsoft on the Windows core quality team
+- Interned at Capital One doing machine learning work with Payments API team
+  (2018)
+- Interned for Blend Labs on the infrastructure team (2017)
+- Interned at Microsoft on the Windows core quality team (2015)
 
 ### Academic
 
