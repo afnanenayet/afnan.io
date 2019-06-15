@@ -1,5 +1,5 @@
 ---
-title: "Introducing Oars"
+title: "Introducing oars"
 description: "A Rust library for handling orthogonal arrays"
 date: 2019-06-14T21:47:21-04:00
 tags: ["orthogonal", "array", "rust", "library", "monte", "carlo"]
@@ -22,6 +22,12 @@ more complex methods, I found that I was having a more difficult time catching
 small errors, and that I was having a tough time verifying my work in general.
 I decided to go ahead and create something new that would hopefully help me
 with my work, and be a little more conducive to my workflow.
+
+## Orthogonal Arrays
+
+You may be wondering what an orthogonal array (OA) actually is. For an in-depth
+read, check out my [thesis](/documents/undergrad_thesis.pdf). In this post,
+I'll give a broader overview.
 
 ## Development
 
@@ -83,6 +89,25 @@ available. More often than not, we simply bundle dependencies as git
 submodules.
 
 Rust, on the other hand, has Cargo, which is an excellent package manager. I
-really enjoy how easy it is to add a dependency and link them with your
-project. Cargo feels much saner than `cmake`, and I don't have to deal with
-obscure linker errors.
+really enjoy how easy it is to add a dependency and link it with your project.
+Cargo feels much saner than `cmake`, and I don't have to deal with obscure
+linker errors. On top of that, Rust's testing and benchmarking tools are really
+easy to use, and provide a standardized and ergonomic way to implement testing
+and benchmarks. This sort of easy verification helped me a lot in ensuring that
+my implementations of various orthogonal array construction techniques were not
+only correct, but performant.
+
+## The API
+
+As I mentioned before, the API for this project was heavily inspired by the
+SampleView program. For each construction method, I have a struct which holds
+parameters that are filled in by the user. There is a trait, `OAConstructor`,
+which demarcates structs that can generate orthogonal arrays. This trait
+contains only one function: `gen()`, which returns a valid orthogonal array.
+Most of the structs that implement this trait will also likely want some sort
+of verification method that ensures that the parameters that users pass in are
+valid. I didn't create a standardized interface for this because I wanted to
+leave some flexibility for the future and for consumers that implement the
+`OAConstructor` trait. Additionally, our research on orthogonal arrays is still
+fairly early, so I don't actually know what kind of constraints will come up as
+we discover new methods for generating orthogonal arrays.
