@@ -8,8 +8,6 @@ hugo # if using a theme, replace with `hugo -t <YOURTHEME>`
 # Go To Public folder
 cd public
 
-rm css/main.scss
-
 # Add changes to git.
 git add .
 

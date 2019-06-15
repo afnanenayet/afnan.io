@@ -1,0 +1,88 @@
+---
+title: "Introducing Oars"
+description: "A Rust library for handling orthogonal arrays"
+date: 2019-06-14T21:47:21-04:00
+tags: ["orthogonal", "array", "rust", "library", "monte", "carlo"]
+draft: true
+---
+
+## The Motivation Behind `oars`
+
+For a while now, I have been working on a library called `oars` (*o*rthogonal
+*a*rrays *r*u*s*t).
+
+The need for this library was born out of the work we were doing on my senior
+thesis and related EGSR paper. The team and I were working on implementing
+orthogonal array construction methods, and using Art Owen's techniques to
+create point sets from these orthogonal arrays that are suitable for Monte
+Carlo integration. At first, we implemented these algorithms and generation
+methods and relied on code review and visualizations to ensure that these
+points were correct (i.e. valid orthogonal arrays). As I attempted to implement
+more complex methods, I found that I was having a more difficult time catching
+small errors, and that I was having a tough time verifying my work in general.
+I decided to go ahead and create something new that would hopefully help me
+with my work, and be a little more conducive to my workflow.
+
+## Development
+
+The API design for `oars` was heavily inspired by the work that my advisor,
+Wojciech Jarosz, did with his tool SampleView. I liked the way his API was
+designed - it made sense and it was clean. I simplified the generic API for
+orthogonal arrays a little bit, since simplified the generic API for orthogonal
+arrays a little bit, since `oars` isn't a general purpose Monte Carlo sampling
+library, but specifically geared towards orthogonal arrays.
+
+One of Rust's strong points is its type system and extensive used of generics.
+I wanted my library to be as generic as possible, so I didn't tie my APIs to
+any particular numeric type. If you have done any heavy numeric work in Rust,
+you know how much of a pain this can be. I used the
+[num](https://github.com/rust-num/num) crate to help facilitate numeric generic
+traits, but even then, I found the process to be lacking in ergonomics.
+
+Consider the following code snippet in C++:
+
+```cpp
+<typename T>
+T add_one(T x) {
+    return x + 1;
+}
+```
+
+Now compare this to Rust:
+
+```rust
+// We need to use the num crate to have generic methods over numeric types
+use num::{NumCast, FromPrimitive};
+
+fn add_one<T>(x: T)
+where T: NumCast + FromPrimitive + Copy
+{
+    x + T::from(1).unwrap()
+}
+```
+
+While this is a smaller example, we can already see that the Rust code snippet
+is much more verbose. My codebase is littered with a lot of these calls, which
+can be slightly annoying. I understand why Rust has these safeguards in place,
+as there are many small overflow and loss of precision errors that can happen
+when C++ engages in reckless implicit casting. I've been a victim of these
+errors myself, even in this project. All the same, I wonder if there is a more
+ergonomic way we could handle numeric types in Rust and reduce some of the
+boilerplate.
+
+There are a lot of features that Rust has that made development much more
+ergonomic than if I had written this library in C++. The biggest pain point I
+have with C++ development is handling libraries. I prefer to use system
+libraries whenever I can, since I'm on Arch and I can easily install pretty
+much every library I'll ever need, but a lot of times when I'm collaborating
+with people on different platforms, we have to use other solutions, like
+bundling dependencies in tree, or use something like [Conan](https://conan.io)
+or [vcpkg](https://github.com/microsoft/vcpkg). While both managers are really
+nice, I have issues with both of them, and not everyone always has them
+available. More often than not, we simply bundle dependencies as git
+submodules.
+
+Rust, on the other hand, has Cargo, which is an excellent package manager. I
+really enjoy how easy it is to add a dependency and link them with your
+project. Cargo feels much saner than `cmake`, and I don't have to deal with
+obscure linker errors.
