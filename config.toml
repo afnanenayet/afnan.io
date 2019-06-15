@@ -15,7 +15,7 @@ googleAnalytics = "UA-57800813-3"
     font = "Source Sans Pro" # should match the name on Google Fonts!
     highlight = true
     highlightStyle = "xcode"
-    highlightLanguages = ["go", "haskell", "kotlin", "scala", "swift", "rust", "c", "cpp", "python"]
+    highlightLanguages = ["rust", "cpp", "python"]
 
 [[menu.main]]
     url = "/"
