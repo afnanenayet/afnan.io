@@ -5,11 +5,10 @@ permalink: /about/
 description: "Information about me, my work, and my academics"
 ---
 
-My name is Afnan Enayet. I studied Computer Science at Dartmouth College. I
-went to the College of William and Mary before transferring to Dartmouth.
-
-I was on the Dartmouth Cycling Team, I play guitar, and I love taking pictures.
-Check out my pictures [on Flickr](https://www.flickr.com/photos/150451945@N05/)!
+My name is Afnan Enayet. I studied Computer Science at Dartmouth College.  I
+was on the Dartmouth Cycling Team, I play guitar, and I love taking pictures.
+Check out my pictures
+[on Flickr](https://www.flickr.com/photos/150451945@N05/)!
 
 ## Contact
 

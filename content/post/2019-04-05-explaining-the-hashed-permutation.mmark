@@ -8,10 +8,9 @@ tags: ["algorithm", "hashed", "permutation", "shuffle", "Andrew", "Kensler"]
 comments: true
 ---
 
-Andrew Kensler, from Pixar, introduced an interesting technique for generating
-the permutation of an array in his 2013 paper,
-[Correlated Multi-Jittered
-Sampling](https://graphics.pixar.com/library/MultiJitteredSampling/paper.pdf).
+Andrew Kensler, a researcher at Pixar, introduced an interesting technique for
+generating the permutation of an array in his 2013 paper,
+[Correlated Multi-Jittered Sampling](https://graphics.pixar.com/library/MultiJitteredSampling/paper.pdf).
 
 Firstly, let's look at the naive way of generating a permutation. You construct
 an array of elements from $$0 \cdots n$$, and then you randomly shuffle them.
