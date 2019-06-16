@@ -77,7 +77,7 @@ Email me if you want to see the source.
 
 ### FreeLoop
 
-{{<figure src="https://lh3.googleusercontent.com/2bOKwovTi5IxmeRPHzUsjU7nuwp-NaiCQPZgdUy4VTBPXGZa_EqjeM2dwNJIrKT-Q-4=w2560-h1240-rw" title="Screenshot of FreeLoop" height="400em" align="center" >}}
+{{<figure src="/images/freeloop_screen.webp" title="Screenshot of FreeLoop" height="400em" align="center" >}}
 
 An app that replicates a guitar looper pedal for free. Available on
 the [Play Store](https://play.google.com/store/apps/details?id=com.enayet.loopr).
@@ -91,7 +91,7 @@ design practices.
 
 ### Minigma
 
-{{<figure src="https://lh3.ggpht.com/Rtyv139yzpKhUwUYXfzlQbXNQ5sRMDqjVBcvCKn2-p2WKWpnFi0xwVXUoEkkxF3Dsd0L=w2560-h1240-rw" title="Screenshot of Minigma" height="400em" align="center" >}}
+{{<figure src="/images/minigma_screen.webp" title="Screenshot of Minigma" height="300em"  >}}
 
 An encryption app that utilizes Android intents to allow a user to send encrypted
 messages through any app on their phone. Download on the
@@ -99,7 +99,7 @@ messages through any app on their phone. Download on the
 
 ### Battery Informatics
 
-{{<figure src="https://lh3.googleusercontent.com/u2C77NoAFHA4sd93rGIeL22uEH0CqO0ziOICkDnNu-xWD1Q-iiZ9qgQsbXfsMTlKgPjT=w2560-h1240-rw" title="Screenshot of Battery Informatics" height="400em" align="center" >}}
+{{<figure src="/images/bat_info_screen.webp" title="Screenshot of Battery Informatics" height="400em" >}}
 
 Provides diagnostic information about a phone's battery, including charge
 capacity, temperature, and rate of discharge. Download on the
