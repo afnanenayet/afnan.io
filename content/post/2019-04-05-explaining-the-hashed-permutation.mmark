@@ -138,5 +138,12 @@ in terms of bits. It takes the leftmost bit, and turns all of the bits to the
 right of the bit to `1`. If the number is a power of two, then the leftmost bit
 is flipped to a `0`.
 
+I was curious as to how Kensler actually derived this specific function, so I
+asked him. He told me that he created a program to measure the 
+[avalanching](https://en.wikipedia.org/wiki/Avalanche_effect)
+properties of the hash function, and they tried a number of hash functions and
+picked the one with the best empirical results.
+
 Using this function gives you a very low overhead way to generate particular
 permutations or shuffles on the fly with `O(1)` space and time complexity.
+
