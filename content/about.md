@@ -32,7 +32,10 @@ available on the usual public key servers. You can also access it
 
 #### Works
 
-- Orthogonal Array Sampling for Monte Carlo Rendering (accepted EGSR/CGF 2019)
+- [Orthogonal Array Sampling for Monte Carlo
+  Rendering](https://cs.dartmouth.edu/~wjarosz/publications/jarosz19orthogonal.html)
+  ([EGSR](http://egsr2019.icube.unistra.fr/)/[CGF](https://www.eg.org/wp/eurographics-publications/cgf/)
+  2019)
 - Undergraduate thesis: [Orthogonal Array Sampling for Monte Carlo
   Rendering](/documents/undergrad_thesis.pdf)
   ([citation](/documents/bach_thesis_citation.bib))
