@@ -8,35 +8,50 @@ draft: true
 
 ## The Motivation Behind `oars`
 
-For a while now, I have been working on a library called `oars` (*o*rthogonal
-*a*rrays *r*u*s*t).
+For a while now, I have been working on a library called
+[oars](https://github.com/afnanenayet/oars) (*o*rthogonal *a*rrays *r*u*s*t).
 
-The need for this library was born out of the work we were doing on my senior
-thesis and related EGSR paper. The team and I were working on implementing
-orthogonal array construction methods, and using Art Owen's techniques to
-create point sets from these orthogonal arrays that are suitable for Monte
-Carlo integration. At first, we implemented these algorithms and generation
-methods and relied on code review and visualizations to ensure that these
-points were correct (i.e. valid orthogonal arrays). As I attempted to implement
-more complex methods, I found that I was having a more difficult time catching
-small errors, and that I was having a tough time verifying my work in general.
-I decided to go ahead and create something new that would hopefully help me
-with my work, and be a little more conducive to my workflow.
+The need for this library was born out of the work we were doing on my
+Bachelor's [thesis](/documents/undergrad_thesis.pdf) and related EGSR
+[paper](https://cs.dartmouth.edu/~wjarosz/publications/jarosz19orthogonal.html).
+The team and I were working on implementing orthogonal array construction
+methods, and using Art Owen's techniques to create point sets from these
+orthogonal arrays that are suitable for Monte Carlo integration. At first, we
+implemented these algorithms and generation methods and relied on code review
+and visualizations to ensure that these points were correct (i.e. valid
+orthogonal arrays). As I attempted to implement more complex methods, I found
+that I was having a more difficult time catching small errors, and that I was
+having a tough time verifying my work in general.  I decided to go ahead and
+create something new that would hopefully help me with my work, and be a little
+more conducive to my workflow.
 
 ## Orthogonal Arrays
 
 You may be wondering what an orthogonal array (OA) actually is. For an in-depth
-read, check out my [thesis](/documents/undergrad_thesis.pdf). In this post,
-I'll give a broader overview.
+read, check out the paper or my thesis. In this post, I'll give a broader
+overview.
+
+### Experiment Design
+
+### Monte Carlo Sampling
 
 ## Development
 
 The API design for `oars` was heavily inspired by the work that my advisor,
 Wojciech Jarosz, did with his tool SampleView. I liked the way his API was
 designed - it made sense and it was clean. I simplified the generic API for
-orthogonal arrays a little bit, since simplified the generic API for orthogonal
-arrays a little bit, since `oars` isn't a general purpose Monte Carlo sampling
-library, but specifically geared towards orthogonal arrays.
+orthogonal arrays a little bit, since `oars` isn't a general purpose Monte
+Carlo sampling library, but specifically geared towards orthogonal arrays.
+
+One of the first reasons I started using Rust in the first place was because
+Rust's testing and benchmarking tools are really easy to use, and provide a
+standardized and ergonomic way to implement testing and benchmarks. This sort
+of easy verification helped me a lot in ensuring that my implementations of
+various orthogonal array construction techniques were not only correct, but
+performant. The testing harnesses made it really easy to sanity check all of my
+implementations, especially during late nights.
+
+### Numeric Code
 
 One of Rust's strong points is its type system and extensive used of generics.
 I wanted my library to be as generic as possible, so I didn't tie my APIs to
@@ -74,40 +89,249 @@ as there are many small overflow and loss of precision errors that can happen
 when C++ engages in reckless implicit casting. I've been a victim of these
 errors myself, even in this project. All the same, I wonder if there is a more
 ergonomic way we could handle numeric types in Rust and reduce some of the
-boilerplate.
+boilerplate. There is a good reason for this explicitness. Consider the
+following code snippet in C++, in which I take a vector of `float`s and try to
+sum over the vector.
 
-There are a lot of features that Rust has that made development much more
-ergonomic than if I had written this library in C++. The biggest pain point I
-have with C++ development is handling libraries. I prefer to use system
-libraries whenever I can, since I'm on Arch and I can easily install pretty
-much every library I'll ever need, but a lot of times when I'm collaborating
-with people on different platforms, we have to use other solutions, like
-bundling dependencies in tree, or use something like [Conan](https://conan.io)
-or [vcpkg](https://github.com/microsoft/vcpkg). While both managers are really
-nice, I have issues with both of them, and not everyone always has them
-available. More often than not, we simply bundle dependencies as git
-submodules.
+```cpp
+#include <iostream>
+#include <numeric>
+#include <vector>
+
+float sum_vec(const std::vector<float> &v) {
+    return std::accumulate(v.begin(), v.end(), 0);
+}
+
+int main() {
+    std::vector<float> v{0.2, 0.2, 0.2};
+    std::cout << sum_vec(v) << std::endl;
+}
+```
+
+For those of you who aren't familiar with the `accumulate` method, it's
+essentially a reduction over an iterable. You can use different accumulation
+methods, such as taking the sum of an iterable or multiplying every element in the
+iterable. The function call takes the beginning and end of an iterable,
+followed up by the initial value. In this case, I used `0` as my initial value
+because I just want the sum of the vector. So what output would you expect to
+see from this code snippet? `0.6` right? Wrong! Let's check the output:
+
+```
+0
+```
+
+We have fallen victim to implicit type coercion. Let's take a look at the
+actual signature of `accumulate`:
+
+```cpp
+template<class InputIt, class T>
+T accumulate(InputIt first, InputIt last, T init);
+```
+
+You can see that the return type is the same as the initialization type. If you
+look at our function above, we made a subtle mistake and passed in `0` as the
+initial value, which is an `int`, rather than `0.0`, which is a `float`. This
+led to the method taking each value, (`0.2` in this case), turning it into an
+integer, which coerces to `0`, and adding that repeatedly to the initial value
+of `0`, which is why the final output was 0.
+
+Here's the corrected version of the function:
+
+```cpp
+float sum_vec(const std::vector<float> &v) {
+    return std::accumulate(v.begin(), v.end(), 0.0);
+}
+```
+
+It's a very small detail, but it's an error I fell victim to and spent far too
+long debugging because it's so subtle.
+
+The Rust analog for the above code is a little different, since Rust provides
+methods on iterators and not methods that take iterators like the STL, so the
+analogy to the code snippet would be something like:
+
+```rust
+fn main() {
+    let v = vec![0.2, 0.2, 0.2];
+    let sum: f32 = v.into_iter().sum();
+    println!("{}", sum);
+}
+```
+
+This gives us the expected output: `0.6`.
+
+Now lets see how Rust handles implicit coercions. Suppose that I specified that
+my vector was a vector of integers:
+
+```rust
+fn main() {
+    let v: i32 = vec![0.2, 0.2, 0.2];
+    let sum: f32 = v.into_iter().sum();
+    println!("{}", sum);
+}
+```
+
+`rustc` gives us the following output:
+
+```txt
+error[E0308]: mismatched types
+ --> src/main.rs:2:18
+  |
+2 |     let v: i32 = vec![0.2, 0.2, 0.2];
+  |                  ^^^^^^^^^^^^^^^^^^^ expected i32, found struct `std::vec::Vec`
+  |
+  = note: expected type `i32`
+             found type `std::vec::Vec<{float}>`
+  = note: this error originates in a macro outside of the current crate (in Nightly builds, run with -Z external-macro-backtrace for more info)
+
+error[E0599]: no method named `into_iter` found for type `i32` in the current scope
+ --> src/main.rs:3:22
+  |
+3 |     let sum: f32 = v.into_iter().sum();
+  |                      ^^^^^^^^^
+  |
+  = note: the method `into_iter` exists but the following trait bounds were not satisfied:
+          `&i32 : std::iter::IntoIterator`
+          `&mut i32 : std::iter::IntoIterator`
+          `i32 : std::iter::IntoIterator`
+
+error: aborting due to 2 previous errors
+```
+
+Or we can specify that the return type should be an integer:
+
+```rust
+fn main() {
+    let v = vec![0.2, 0.2, 0.2];
+    let sum: i32 = v.into_iter().sum();
+    println!("{}", sum);
+}
+```
+
+This gives us the following error:
+
+```txt
+error[E0277]: the trait bound `i32: std::iter::Sum<{float}>` is not satisfied
+ --> src/main.rs:3:34
+  |
+3 |     let sum: i32 = v.into_iter().sum();
+  |                                  ^^^ the trait `std::iter::Sum<{float}>` is not implemented for `i32`
+  |
+  = help: the following implementations were found:
+            <i32 as std::iter::Sum<&'a i32>>
+            <i32 as std::iter::Sum>
+
+error: aborting due to previous error
+```
+
+Rust's mandated explicitness catches type mismatches that would have been
+implicitly coerced in C++, at the expense of some verbosity (at least with
+generic numerical types).
+
+### External Libraries
+
+One of the biggest pain points I have with C++ development is library
+management. I prefer to use system libraries whenever I can, since I'm on Arch
+and I can easily install pretty much every library I'll ever need, but a lot of
+times when I'm collaborating with people on different platforms, we have to use
+other solutions, like bundling dependencies in tree, or use something like
+[Conan](https://conan.io) or [vcpkg](https://github.com/microsoft/vcpkg). While
+both managers are really nice, I have issues with both of them, and not
+everyone always has them available. More often than not, we simply bundle
+dependencies as git submodules.
 
 Rust, on the other hand, has Cargo, which is an excellent package manager. I
 really enjoy how easy it is to add a dependency and link it with your project.
 Cargo feels much saner than `cmake`, and I don't have to deal with obscure
-linker errors. On top of that, Rust's testing and benchmarking tools are really
-easy to use, and provide a standardized and ergonomic way to implement testing
-and benchmarks. This sort of easy verification helped me a lot in ensuring that
-my implementations of various orthogonal array construction techniques were not
-only correct, but performant.
+linker errors.
 
 ## The API
 
 As I mentioned before, the API for this project was heavily inspired by the
-SampleView program. For each construction method, I have a struct which holds
-parameters that are filled in by the user. There is a trait, `OAConstructor`,
-which demarcates structs that can generate orthogonal arrays. This trait
-contains only one function: `gen()`, which returns a valid orthogonal array.
-Most of the structs that implement this trait will also likely want some sort
-of verification method that ensures that the parameters that users pass in are
-valid. I didn't create a standardized interface for this because I wanted to
-leave some flexibility for the future and for consumers that implement the
-`OAConstructor` trait. Additionally, our research on orthogonal arrays is still
-fairly early, so I don't actually know what kind of constraints will come up as
-we discover new methods for generating orthogonal arrays.
+SampleView program (a program written by Dr. Jarosz to visualize sampling
+points in various dimensions for Monte Carlo integration). For each
+construction method, I have a struct which holds parameters that are filled in
+by the user. There is a trait, `OAConstructor`, which demarcates structs that
+can generate orthogonal arrays. This trait contains only one function: `gen()`,
+which returns a valid orthogonal array.  Most of the structs that implement
+this trait will also likely want some sort of verification method that ensures
+that the parameters that users pass in are valid. I didn't create a
+standardized interface for this because I wanted to leave some flexibility for
+the future and for consumers that implement the `OAConstructor` trait.
+Additionally, our research on orthogonal arrays is still fairly early, so I
+don't actually know what kind of constraints will come up as we discover new
+methods for generating orthogonal arrays.
+
+### Parallelization
+
+I also wanted to create a parallel constructor interface, since it seemed
+fairly trivial to convert the Bose and Bush construction methods to utilize
+parallelization. `ndarray` provides the `ndarray-parallel` crate, which
+integrates with `rayon`. I used rayon's parallel iterators to set up
+parallelization with the Bose and Bush methods. These construction methods are
+wrapped in a trait called `ParOAConstructor`, which provides a generic
+interface for any parallel construction method and can be extended by the user.
+
+### Stateful Types
+
+The implemented constructors in `oars` have parameters that are passed in as
+structs. The parameters for Bose and Bush are very specific, your base must be
+a prime number, the dimensionality of the resulting point set has to be less
+than the base, and so on. At first, I had the structs implement a
+function, `verify(&self) -> bool`, that would be called whenever the end user
+tried to generate an orthogonal array. I wasn't a huge fan of this implicit
+behavior, because verifying large prime numbers can be expensive, and on top of
+that, I wanted a more transparent and optional way to do parameter checks.
+
+I learned about stateful types in Rust, and decided to use this principle for
+parameter checking as well. The constructors for OAs have two variants: a
+checked variant and a "direct" variant. The checked variant is simply a struct
+that checks parameters, and upon success, consumes the struct and returns the
+regular constructor, which implements the trait for generating OAs.
+
+The general flow for the verification states is as follows:
+
+```rust
+impl<T> BoseChecked<T> {
+    verify(self) -> OarsResult<Bose> {
+        // verify things here
+        // ...
+
+        // invalid parameters
+        return OarsError::new("bad params");
+
+        // valid parameters
+        Bose {
+            // ...
+        }
+    }
+}
+```
+
+What happens here is that the user supplies some values to the struct. This
+method performs some checking, and upon success, the `BoseChecked` struct is
+consumed so it can't be used anymore, and is replaced by the `Bose` struct,
+which implements the proper traits so it can generate an orthogonal array. Of
+course, if you don't want to incur the overhead of checking the parameters, you
+are free to just use the `Bose` struct directly, but improper parameters will
+lead to invalid orthogonal arrays, so it is up to the user to verify their own
+parameters.
+
+The stateful typing system allows for some pretty ergonomic code. The general
+flow for generating orthogonal arrays with checked code goes like this:
+
+```rust
+let bose = BoseChecked {
+    prime_base: 3,
+    dimensions: 3,
+};
+
+let oa = bose.verify()?.gen()?;
+```
+
+## Resources
+
+* [EGSR paper](https://cs.dartmouth.edu/~wjarosz/publications/jarosz19orthogonal.html)
+* [Bachelor's thesis](https://www.cs.dartmouth.edu/~trdata/reports/abstracts/TR2019-872/)
+* [Library documentation](https://docs.rs/oars)
+* [Github link](https://github.com/afnanenayet/oars)
