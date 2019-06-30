@@ -134,14 +134,13 @@ integration? Well, it turns out the way that we generate these random numbers,
 or our sampling techniques, have a significant effect on how quickly this
 technique converges to the right answer.
 
-It makes sense right? If you average more random samples, you'll get a more
-accurate answer. Using more efficient sample techniques means that you start
-approaching the correct answer even faster. Another way to put this is that if
-we take 100 samples with pure random sampling, and 100 samples with a more
-efficient method, the more efficient method will be more accurate. There are
-several properties for point sets that are conducive to efficient Monte Carlo
-integration, such as low-discrepancy and good stratification, which I won't get
-into in this post.
+If you average more random samples, you'll get a more accurate answer. Using
+more efficient sample techniques means that you start approaching the correct
+answer even faster. Another way to put this is that if we take 100 samples with
+pure random sampling, and 100 samples with a more efficient method, the more
+efficient method will be more accurate. There are several properties for point
+sets that are conducive to efficient Monte Carlo integration, such as
+low-discrepancy and good stratification, which I won't get into in this post.
 
 It turns out that if you take an orthogonal array, and you normalize and
 randomize it, the resulting point set works very well for Monte Carlo

@@ -3,6 +3,7 @@ layout: page
 title: About
 permalink: /about/
 description: "Information about me, my work, and my academics"
+disableComments: true
 ---
 
 My name is Afnan Enayet. I studied Computer Science at Dartmouth College.  I

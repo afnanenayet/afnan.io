@@ -3,6 +3,7 @@ layout: single
 permalink: /projects/
 title: Projects
 description: "Personal projects and other work"
+disableComments: true
 ---
 
 ## [oars](https://github.com/afnanenayet/oars)
@@ -91,7 +92,7 @@ design practices.
 
 ### Minigma
 
-{{<figure src="/images/minigma_screen.webp" title="Screenshot of Minigma" height="300em"  >}}
+{{<figure src="/images/minigma_screen.webp" title="Screenshot of Minigma" height="400em"  >}}
 
 An encryption app that utilizes Android intents to allow a user to send encrypted
 messages through any app on their phone. Download on the
