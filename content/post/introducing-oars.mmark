@@ -3,7 +3,6 @@ title: "Introducing oars"
 description: "A Rust library for handling orthogonal arrays"
 date: 2019-06-14T21:47:21-04:00
 tags: ["orthogonal", "array", "rust", "library", "monte", "carlo"]
-draft: true
 math: true
 markup: mmark
 ---
