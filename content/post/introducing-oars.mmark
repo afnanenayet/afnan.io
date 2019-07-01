@@ -284,7 +284,7 @@ my vector was a vector of integers:
 
 ```rust
 fn main() {
-    let v: i32 = vec![0.2, 0.2, 0.2];
+    let v: Vec<i32> = vec![0.2, 0.2, 0.2];
     let sum: f32 = v.into_iter().sum();
     println!("{}", sum);
 }
@@ -294,27 +294,13 @@ fn main() {
 
 ```txt
 error[E0308]: mismatched types
- --> src/main.rs:2:18
+ --> src/main.rs:2:28
   |
-2 |     let v: i32 = vec![0.2, 0.2, 0.2];
-  |                  ^^^^^^^^^^^^^^^^^^^ expected i32, found struct `std::vec::Vec`
+2 |     let v: Vec<i32> = vec![0.2, 0.2, 0.2];
+  |                            ^^^ expected i32, found floating-point number
   |
   = note: expected type `i32`
-             found type `std::vec::Vec<{float}>`
-  = note: this error originates in a macro outside of the current crate (in Nightly builds, run with -Z external-macro-backtrace for more info)
-
-error[E0599]: no method named `into_iter` found for type `i32` in the current scope
- --> src/main.rs:3:22
-  |
-3 |     let sum: f32 = v.into_iter().sum();
-  |                      ^^^^^^^^^
-  |
-  = note: the method `into_iter` exists but the following trait bounds were not satisfied:
-          `&i32 : std::iter::IntoIterator`
-          `&mut i32 : std::iter::IntoIterator`
-          `i32 : std::iter::IntoIterator`
-
-error: aborting due to 2 previous errors
+             found type `{float}`
 ```
 
 Or we can specify that the return type should be an integer:
