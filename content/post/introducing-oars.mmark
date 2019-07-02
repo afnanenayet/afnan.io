@@ -377,6 +377,16 @@ parallelization with the Bose and Bush methods. These construction methods are
 wrapped in a trait called `ParOAConstructor`, which provides a generic
 interface for any parallel construction method and can be extended by the user.
 
+Rayon is super easy to use because it can adapt iterators, so if you're writing
+function code, the changes to make your routines parallel are typically
+one-liners. Since I had my benchmarking tools set up, I used them to see
+exactly how much of a benefit parallelization yielded. To my surprise, there
+was actually no benefit, since I had tried to parallelize too much. I
+experimented a bit, and found that I got the biggest speedup from only
+constructing various columns (or dimensions) of an orthogonal array in
+parallel. Otherwise, the overhead of threading outweighed the benefits of
+staging the tasks in parallel.
+
 ### Stateful Types
 
 The implemented constructors in `oars` have parameters that are passed in as
