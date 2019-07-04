@@ -465,9 +465,9 @@ struct, but changes its name to be suffixed by `Checked`. Usage is very simple:
 
 
 ```rust
-#[derive(Checked)]
 // creates a struct called `BoseChecked` with identical parameters, comments,
 // visibility, etc.
+#[derive(Checked)]
 struct Bose {
     // ...
 }
