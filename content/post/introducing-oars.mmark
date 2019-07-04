@@ -444,6 +444,46 @@ let bose = BoseChecked {
 let oa = bose.verify()?.gen()?;
 ```
 
+### Procedural Macros
+
+One of the consequences of utilizing stateful types for my library was that
+each constructor struct needed to have a variant that had the exact same
+fields. So for example, I have a struct for the `Bose` constructor, as well as
+a struct called `BoseChecked`. The library follows a consistent naming
+convention where the checked variant of a constructor (`Ctor`) is suffixed by
+"Checked", so `Ctor -> CtorChecked`. As you can imagine, it would be really
+annoying to have to create duplicate structs for each constructor, and on top
+of that, you introduce the potential for copy/paste errors.
+
+Luckily, Rust has a solution for this in the form of procedural macros. If
+you're not familiar with Rust's macros, they are very powerful tools that are
+also much safer than the macros you encounter in C/C++. Whereas those macros
+are simple text substitution and allow for a lot of error, Rust's macro system
+is checked by the compiler, and has some very strong reflection capabilities. I
+created a derive macro called `Checked` which automatically creates a copy of a
+struct, but changes its name to be suffixed by `Checked`. Usage is very simple:
+
+
+```rust
+#[derive(Checked)]
+// creates a struct called `BoseChecked` with identical parameters, comments,
+// visibility, etc.
+struct Bose {
+    // ...
+}
+```
+
+Developing this macro was very nice because the compiler was able to catch
+errors as I developed. Had I used simple text substitution, catching bugs would
+be a much more arduous and lengthy process.
+
+The macro itself actually creates a syntax tree from the code block that it's
+applied on, so if for example, this macro is applied to something besides a
+struct, the macro will invoke a compilation error. Additionally, modifying a
+syntax tree rather than working with text means that the way I am replacing the
+identifier for the struct is much easier and safer than doing complex string
+parsing.
+
 ## Resources/Links
 
 * [EGSR paper](https://cs.dartmouth.edu/~wjarosz/publications/jarosz19orthogonal.html)
