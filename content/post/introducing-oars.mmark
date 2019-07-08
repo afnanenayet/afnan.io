@@ -249,7 +249,7 @@ T accumulate(InputIt first, InputIt last, T init);
 
 You can see that the return type is the same as the initialization type. If you
 look at our function above, we made a subtle mistake and passed in `0` as the
-initial value, which is an `int`, rather than `0.0`, which is a `float`. This
+initial value, which is an `int`, rather than `0.0`, which is a `double`. This
 led to the method taking each value, (`0.2` in this case), turning it into an
 integer, which coerces to `0`, and adding that repeatedly to the initial value
 of `0`, which is why the final output was 0.
