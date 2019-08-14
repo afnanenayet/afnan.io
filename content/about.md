@@ -6,9 +6,9 @@ description: "Information about me, my work, and my academics"
 disableComments: true
 ---
 
-My name is Afnan Enayet. I studied Computer Science at Dartmouth College.  I
-was on the Dartmouth Cycling Team, I play guitar, and I love taking pictures.
-Check out my pictures
+My name is Afnan Enayet. I'm a software engineer currently in the Bay Area. I
+studied Computer Science at Dartmouth College. I was on the Dartmouth Cycling
+Team, I play guitar, and I love taking pictures. Check out my pictures
 [on Flickr](https://www.flickr.com/photos/150451945@N05/)!
 
 ## Contact
@@ -23,7 +23,7 @@ available on the usual public key servers. You can also access it
 
 ### Professional
 
-- Incoming software engineer at Blend Labs on the infrastructure team
+- Software engineer at Blend Labs on the infrastructure team (2019 - present)
 - Interned at Capital One doing machine learning work with Payments API team
   (2018)
 - Interned for Blend Labs on the infrastructure team (2017)
