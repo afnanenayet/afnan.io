@@ -2,11 +2,13 @@ baseURL = "https://afnan.io"
 languageCode = "en-us"
 title = "Afnan Enayet"
 theme = "minimal"
-disqusShortname = "afnanenayet" # delete this to disable disqus comments
-googleAnalytics = "UA-57800813-3"
+#googleAnalytics = "UA-57800813-3"
+pygmentscodefences  = true
+pygmentsUseClasses = true
 
 [params]
     author = "Afnan Enayet"
+    sitename = "Afnan Enayet"
     description = "A personal site"
     githubUsername = "afnanenayet"
     accent = "red"
@@ -16,6 +18,7 @@ googleAnalytics = "UA-57800813-3"
     highlight = true
     highlightStyle = "xcode"
     highlightLanguages = ["rust", "cpp", "python"]
+    katexVersion = "0.11.1"
 
 [[menu.main]]
     url = "/"
@@ -28,7 +31,7 @@ googleAnalytics = "UA-57800813-3"
     weight = 2
 
 [[menu.main]]
-    url = "/post/"
+    url = "/"
     name = "Posts"
     weight = 3
 
