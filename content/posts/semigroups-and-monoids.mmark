@@ -1,7 +1,6 @@
 ---
 title: "Semigroups and Monoids"
 date: 2019-10-07T09:59:52-07:00
-draft: true
 ---
 
 In functional programming there are two concepts that are surprisingly simple
@@ -14,7 +13,7 @@ abstraction that allow you to generically combine data types.
 
 ## Semigroups
 
-Before we get into monads, we first need to define a `semigroup`, since the
+Before we get into monads, we first need to define a `Semigroup`, since the
 monad is a strict subset of the semigroup. A semigroup is basically a set with
 an associative multiplication operation defined on it. In Haskell, we don't
 have a multiplication operation, but rather, the `<>` operator. Both of these
