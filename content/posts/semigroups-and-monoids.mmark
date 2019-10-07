@@ -3,13 +3,14 @@ title: "Semigroups and Monoids"
 date: 2019-10-07T09:59:52-07:00
 ---
 
-In functional programming there are two concepts that are surprisingly simple
-that are mentioned a lot that sound a little intimidating: the semigroup and the
-monoid. These concepts originate from
+In functional programming there are two concepts that are mentioned a lot that
+may sound intimidating: the semigroup and the monoid. These concepts originate
+from
 [category theory](https://en.wikipedia.org/wiki/Category_theory), which is a
 branch of math that aims to reason about the entirety of math through graphs
-called "categories". While they sound complex, they are a simple but powerful
-abstraction that allow you to generically combine data types.
+called "categories". While monoids and semigroups sound complex, they are a
+simple but powerful abstraction that allow you to generically combine data
+types.
 
 ## Semigroups
 
@@ -97,8 +98,7 @@ p1 = Point2D 1 2
 p2 = Point2D 2 3
 ```
 
-We can combine these points using `mconcat` or `<>` (since they're the same
-function):
+We can combine these points using `mconcat`, `<>`, or `mappend`:
 
 ```txt
 mconcat [p1, p2]
