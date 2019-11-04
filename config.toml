@@ -2,7 +2,6 @@ baseURL = "https://afnan.io"
 languageCode = "en-us"
 title = "Afnan Enayet"
 theme = "minimal"
-#googleAnalytics = "UA-57800813-3"
 pygmentscodefences  = true
 pygmentsUseClasses = true
 
@@ -40,21 +39,7 @@ pygmentsUseClasses = true
     name = "Projects"
     weight = 4
 
-# Social icons to be shown on the right-hand side of the navigation bar
-# The "name" field should match the name of the icon to be used
-# The list of available icons can be found at http://fontawesome.io/icons/
-
-[[menu.icon]]
-    url = "mailto:afnan@afnan.io"
-    name = "envelope-o"
-    weight = 1
-
-[[menu.icon]]
+[[menu.main]]
     url = "https://github.com/afnanenayet"
-    name = "github"
-    weight = 2
-
-[[menu.icon]]
-    url = "https://www.linkedin.com/in/afnanenayet"
-    name = "linkedin"
-    weight = 3
+    name = "Github"
+    weight = 5
