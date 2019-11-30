@@ -19,10 +19,6 @@ pygmentsUseClasses = true
     highlightLanguages = ["rust", "cpp", "python"]
     katexVersion = "0.11.1"
 
-[markup]
-    [markup.highlight]
-    lineNos = true
-
 [[menu.main]]
     url = "/"
     name = "Home"
