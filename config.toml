@@ -20,21 +20,16 @@ pygmentsUseClasses = true
     katexVersion = "0.11.1"
 
 [[menu.main]]
-    url = "/"
-    name = "Home"
-    weight = 1
-
-[[menu.main]]
     url = "/about/"
     name = "About"
-    weight = 2
+    weight = 1
 
 [[menu.main]]
     url = "/project/"
     name = "Projects"
-    weight = 3
+    weight = 2
 
 [[menu.main]]
     url = "https://github.com/afnanenayet"
     name = "Github"
-    weight = 4
+    weight = 3
