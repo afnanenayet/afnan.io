@@ -11,6 +11,13 @@ studied Computer Science at Dartmouth College. I was on the Dartmouth Cycling
 Team, I play guitar, and I love taking pictures. Check out my pictures
 [on Flickr](https://www.flickr.com/photos/150451945@N05/)!
 
+I enjoy learning CS theory, in particular graphics and rendering. My research
+was on Monte Carlo sampling theory, and I hope to continue contributing to the
+field.  Outside of graphics, I find compilers and type theory rather
+interesting, and I like interesting programming languages like
+[Rust](https://www.rust-lang.org/), [Haskell](https://www.haskell.org/), and
+[Idris](https://www.idris-lang.org/) (just to name a few).
+
 ## Contact
 
 You can reach me at [afnan@afnan.io](mailto:afnan@afnan.io).
