@@ -19,13 +19,11 @@ strong orthogonal arrays. The library is available at
 
 A port of the PCG random number generation library, written in pure Rust.
 
-## [weekend-ray-tracer](https://github.com/afnanenayet/weekend-ray-tracer)
+## [nib-ray-tracer](https://github.com/afnanenayet/nib)
 
-{{< figure src="https://raw.githubusercontent.com/afnanenayet/weekend-ray-tracer/master/docs/sphere_mirror_colors.png" title="Example render from the ray tracer" >}}
+{{< figure src="https://raw.githubusercontent.com/afnanenayet/nib/master/docs/sample_image.png">}}
 
-A ray tracer written in Rust, which follows Pete Shirley's book, "Ray Tracing
-in One Weekend." It features multithreading, and (soon to be completed)
-serialization.
+A WIP renderer written in Rust.
 
 ## [ensh](https://github.com/afnanenayet/Enayet-Shell)
 
