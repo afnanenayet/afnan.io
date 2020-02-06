@@ -19,7 +19,7 @@ strong orthogonal arrays. The library is available at
 
 A port of the PCG random number generation library, written in pure Rust.
 
-## [nib-ray-tracer](https://github.com/afnanenayet/nib)
+## [nib](https://github.com/afnanenayet/nib)
 
 {{< figure src="https://raw.githubusercontent.com/afnanenayet/nib/master/docs/sample_image.png">}}
 
