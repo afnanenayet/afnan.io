@@ -21,7 +21,7 @@ A port of the PCG random number generation library, written in pure Rust.
 
 ## [nib](https://github.com/afnanenayet/nib)
 
-{{< figure src="https://raw.githubusercontent.com/afnanenayet/nib/master/docs/sample_image.png">}}
+{{< figure src="https://raw.githubusercontent.com/afnanenayet/nib/master/.github_assets/sample_image.png">}}
 
 A WIP renderer written in Rust.
 
