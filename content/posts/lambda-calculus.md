@@ -179,7 +179,7 @@ evaluate to \\(x + y\\).
 {{< katex >}}
 \begin{aligned}
 f_{0}(1) &= f_{1} \\
-f_{1}(y) &= x + 1
+f_{1}(y) &= 1 + y
 \end{aligned}
 {{< /katex >}}
 
