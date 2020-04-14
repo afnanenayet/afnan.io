@@ -247,7 +247,7 @@ math or programming context, and it's not very different here:
 
 {{< katex >}}
 (\lambda x . x + 5) 1 \\
-[ x := 5 ]  \\
+[ x := 1 ]  \\
 1 + 5 \\
 6 \\
 {{< /katex >}}
