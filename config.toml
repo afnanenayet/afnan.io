@@ -16,7 +16,7 @@ pygmentsUseClasses = true
     font = "Source Sans Pro" # should match the name on Google Fonts!
     highlight = true
     highlightStyle = "xcode"
-    highlightLanguages = ["rust", "cpp", "python"]
+    highlightLanguages = ["rust", "cpp", "python", "golang"]
     katexVersion = "0.11.1"
 
 [[menu.main]]
@@ -33,3 +33,22 @@ pygmentsUseClasses = true
     url = "https://github.com/afnanenayet"
     name = "Github"
     weight = 3
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.extensions]
+      definitionList = true
+      footnote = true
+      linkify = true
+      strikethrough = true
+      table = true
+      taskList = true
+      typographer = true
+    [markup.goldmark.parser]
+      attribute = true
+      autoHeadingID = true
+      autoHeadingIDType = "github"
+    [markup.goldmark.renderer]
+      hardWraps = false
+      unsafe = true
+      xhtml = false
