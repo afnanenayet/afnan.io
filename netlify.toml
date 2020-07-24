@@ -28,10 +28,3 @@ HUGO_VERSION = "0.74.3"
 
 [context.next.environment]
 HUGO_ENABLEGITINFO = "true"
-
-[[plugins]]
-  package = "netlify-plugin-hugo-cache-resources"
-
-	[plugins.inputs]
-	# If it should show more verbose logs (optional, default = true)
-	debug = true
