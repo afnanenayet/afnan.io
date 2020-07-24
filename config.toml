@@ -1,7 +1,7 @@
 baseURL = "https://afnan.io"
 languageCode = "en-us"
 title = "Afnan Enayet"
-theme = "minimal"
+theme = "black-and-light"
 pygmentscodefences  = true
 pygmentsUseClasses = true
 
