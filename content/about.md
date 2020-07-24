@@ -16,7 +16,7 @@ was on Monte Carlo sampling theory, and I hope to continue contributing to the
 field.  Outside of graphics, I find compilers and type theory rather
 interesting, and I like interesting programming languages like
 [Rust](https://www.rust-lang.org/), [Haskell](https://www.haskell.org/), and
-[Idris](https://www.idris-lang.org/) (just to name a few).
+[Idris](https://www.idris-lang.org/).
 
 ## Contact
 
