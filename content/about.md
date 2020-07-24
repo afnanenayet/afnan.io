@@ -20,7 +20,7 @@ interesting, and I like interesting programming languages like
 
 ## Contact
 
-You can reach me at [afnan@afnan.io](mailto:afnan@afnan.io).
+You can reach me at `afnan at afnan dot io`.
 
 I use PGP keys to sign and encrypt my emails. My public key is probably
 available on the usual public key servers. You can also access it
