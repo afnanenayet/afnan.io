@@ -1,3 +1,4 @@
 [submodule "themes/black-and-light"]
 	path = themes/black-and-light
-	url = git@github.com:afnanenayet/hugo-black-and-light-theme.git
+	url = https://github.com/afnanenayet/hugo-black-and-light-theme.git
+
