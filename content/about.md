@@ -30,7 +30,9 @@ available on the usual public key servers. You can also access it
 
 ### Professional
 
-- Software engineer at Blend Labs on the infrastructure team (2019 - present)
+* Incoming Quantitative Research Engineer on Global Quantitative Strategies
+  (GQS) at Citadel
+- Software engineer at Blend Labs on the infrastructure team (2019 - 2020)
 - Interned at Capital One doing machine learning work with Payments API team
   (2018)
 - Interned for Blend Labs on the infrastructure team (2017)
