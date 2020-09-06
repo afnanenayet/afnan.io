@@ -17,7 +17,7 @@ pygmentsUseClasses = true
     highlight = true
     highlightStyle = "xcode"
     highlightLanguages = ["rust", "cpp", "python", "golang"]
-    katexVersion = "0.11.1"
+    katexVersion = "0.12"
 
 [[menu.main]]
     url = "/about/"
