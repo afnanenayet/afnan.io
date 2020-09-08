@@ -182,9 +182,9 @@ set $$B$$ is an enumeration over all of them.
 
 $$
 b_1 = \{ 0, 0, 0, 0, \cdots \} \\
-b_2 = \{ 1, 1, 0, 0, \cdots \} \\
+b_2 = \{ 1, 0, 0, 0, \cdots \} \\
 b_3 = \{ 1, 1, 0, 0, \cdots \} \\
-b_4 = \{ 1, 1, 1, 1, \cdots \}
+b_4 = \{ 1, 1, 1, 0, \cdots \}
 $$
 
 Given this sequence, we are going to get a number from the diagonals in the
@@ -193,14 +193,14 @@ that the $$n^{th}$$ digit of the new number (the numbers are bolded).
 
 $$
 b_1 = \{ \textbf{0}, 0, 0, 0, \cdots \} \\
-b_2 = \{ 1, \textbf{1}, 0, 0, \cdots \} \\
+b_2 = \{ 1, \textbf{0}, 0, 0, \cdots \} \\
 b_3 = \{ 1, 1, \textbf{0}, 0, \cdots \} \\
-b_4 = \{ 1, 1, 1, \textbf{1}, \cdots \}
+b_4 = \{ 1, 1, 1, \textbf{0}, \cdots \}
 $$
 
-So, our new number is $$0101 \dots$$. We will create a new number by taking the
+So, our new number is $$0000 \dots$$. We will create a new number by taking the
 binary complement of the number (we're just flipping the 0s and 1s), to create
-$$1010 \dots$$.
+$$1111 \dots$$.
 
 Do you remember how I told you that that we constructed the set $$B$$ as an
 enumeration of every possible binary sequence? If that's true then how could we
