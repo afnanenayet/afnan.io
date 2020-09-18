@@ -308,3 +308,7 @@ If you want to go more in depth, I highly recommend you check out these links:
 * [Introduction to Lambda Calculus (Chalmers)](http://www.cse.chalmers.se/research/group/logic/TypesSS05/Extra/geuvers.pdf)
 * [A Tutorial Introduction to Lambda Calculus (FU Berline)](https://www.inf.fu-berlin.de/lehre/WS03/alpi/lambda.pdf)
 * [The Lambda Calculus (Cornell)](https://www.cs.cornell.edu/courses/cs3110/2008fa/recitations/rec26.html)
+
+---
+
+See discussion on [Reddit](https://www.reddit.com/r/haskell/comments/g17x26/i_wrote_an_introoverview_of_lambda_calculus/)
