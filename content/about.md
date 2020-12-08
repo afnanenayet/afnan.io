@@ -6,7 +6,7 @@ description: "Information about me, my work, and my academics"
 disableComments: true
 ---
 
-My name is Afnan Enayet. I'm a software engineer currently in the Bay Area. I
+My name is Afnan Enayet. I'm a software engineer currently in Chicago. I
 studied Computer Science at Dartmouth College. I was on the Dartmouth Cycling
 Team, I play guitar, and I love taking pictures. Check out my pictures
 [on Flickr](https://www.flickr.com/photos/150451945@N05/)!
