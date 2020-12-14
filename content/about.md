@@ -6,10 +6,10 @@ description: "Information about me, my work, and my academics"
 disableComments: true
 ---
 
-My name is Afnan Enayet. I'm a software engineer currently in Chicago. I
-studied Computer Science at Dartmouth College. I was on the Dartmouth Cycling
-Team, I play guitar, and I love taking pictures. Check out my pictures
-[on Flickr](https://www.flickr.com/photos/150451945@N05/)!
+My name is Afnan Enayet. I'm a quantitative research engineer currently in
+Chicago. I studied Computer Science at Dartmouth College. I was on the
+Dartmouth Cycling Team, I play guitar, and I love taking pictures. Check out my
+pictures [on Flickr](https://www.flickr.com/photos/150451945@N05/)!
 
 I enjoy learning CS theory, in particular graphics and rendering. My research
 was on Monte Carlo sampling theory, and I hope to continue contributing to the
