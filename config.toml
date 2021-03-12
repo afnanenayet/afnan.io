@@ -4,6 +4,8 @@ title = "Afnan Enayet"
 theme = "black-and-light"
 pygmentscodefences  = true
 pygmentsUseClasses = true
+canonifyurls = true
+disableKinds = ["RSS", "term", "taxonomy", "section"]
 
 [params]
     author = "Afnan Enayet"
