@@ -13,14 +13,14 @@ languages such as [Haskell](https://www.haskell.org) and
 
 The significance of having a universal model of computation is that it provides
 a way of solving any problem that can be expressed in the system, and changes
-problems from "How can I calculate this," to "Can I express this properly?"
+the problem from "how can I calculate this" to "can I express this properly?"
 Lambda calculus is also Turing complete, and even more impressively, was
 invented in the 1930s independently of Turing.
 
-I'm not going to proclaim to be an expert on category theory or lambda
-calculus, but I would like to show you some of the basics, because I think that
-seeing how simple it is to perform computations with lambda calculus will give
-you some idea of how elegant this model is.
+I don't proclaim to be an expert on category theory or lambda calculus, but I
+would like to show you some of the basics, because I think that seeing how
+simple it is to perform computations with lambda calculus will give you some
+idea of how elegant this model is.
 
 ## Getting Started: Lambda Terms
 
@@ -165,23 +165,23 @@ $$
 We can translate this to a curried function by splitting up the arguments and
 nesting the functions for each argument:
 
-{{< katex >}}
+{{<katex display>}}
 \begin{aligned}
 f_{1}(y) &= x + y \\
 f_{0}(x) &= f_{1}
 \end{aligned}
-{{< /katex >}}
+{{</katex>}}
 
 The first function, \\(f_0\\), defines x, and returns another function,
 \\(f_{1}\\). You then need to pass \\(y\\) to the second function, which will
 evaluate to \\(x + y\\).
 
-{{< katex >}}
+{{<katex display>}}
 \begin{aligned}
 f_{0}(1) &= f_{1} \\
 f_{1}(y) &= 1 + y
 \end{aligned}
-{{< /katex >}}
+{{</katex>}}
 
 So we can get the same behavior as \\(f(x, y)\\) by calling \\(f_{0}(x)(y)\\).
 
@@ -197,8 +197,11 @@ $$
 \lambda x . (\lambda y . (x + y))
 $$
 
-I added the parenthesis for more clarity, but usually you'd just write it as
-\\(\lambda x . \lambda y . x + y\\).
+I added the parenthesis for more clarity, but usually you'd just write it as:
+
+$$
+\lambda x . \lambda y . x + y
+$$
 
 Currying allows you to take contexts where you can only have a single argument
 for a function and turn them into functions that allow for multiple arguments.
@@ -245,21 +248,23 @@ body of the abstraction with the argument that's applied to the abstraction.
 You have already done this by applying arguments to functions, whether in a
 math or programming context, and it's not very different here:
 
-{{< katex >}}
+{{<katex display>}}
+\begin{gather*}
 (\lambda x . x + 5) 1 \\
 [ x := 1 ]  \\
 1 + 5 \\
 6 \\
-{{< /katex >}}
+\end{gather*}
+{{</katex>}}
 
 Note that there is a particular notation for the substitution step:
 
-{{< katex >}}
+{{<katex>}}
 [x := 1]
-{{< /katex >}}
+{{</katex>}}
 
-This statement says that all instances of the bound variable \\(x\\) are being
-replaced with \\(1\\). This syntax is also what Golang uses to declare new
+This statement says that all instances of the bound variable $x$ are being
+replaced with $1$. This syntax is also what Golang uses to declare new
 variables:
 
 ```go
@@ -275,22 +280,26 @@ and the reduction process will go on forever.
 There is a well-known lambda expression that diverges, called the Omega
 combinator:
 
-{{< katex >}}
+{{<katex display>}}
+\begin{gather*}
 \Omega = (\lambda x . x x) (\lambda x . x x) \\
 [x := \lambda x . x x] \\
 \Omega = (\lambda x . x x) (\lambda x . x x)
-{{< /katex >}}
+\end{gather*}
+{{</katex>}}
 
 This will go on forever.
 
 Here's a simple lambda expression that converges:
 
-{{< katex >}}
+{{<katex display>}}
+\begin{gather*}
 (\lambda x . x + 1) 1 \\
 [x := 1] \\
-1 + 1 \\
-2
-{{< /katex >}}
+1 + 1  \\
+2 \\
+\end{gather*}
+{{</katex>}}
 
 All of the lambda expressions I've presented in this article converge (besides
 the Omega combinator).

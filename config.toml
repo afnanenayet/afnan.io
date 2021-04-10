@@ -19,7 +19,7 @@ disableKinds = ["RSS", "term", "taxonomy", "section"]
     highlight = true
     highlightStyle = "xcode"
     highlightLanguages = ["rust", "cpp", "python", "golang"]
-    katexVersion = "0.12"
+    katexVersion = "0.13.1"
 
 [[menu.main]]
     url = "/about/"
@@ -35,22 +35,3 @@ disableKinds = ["RSS", "term", "taxonomy", "section"]
     url = "https://github.com/afnanenayet"
     name = "Github"
     weight = 3
-
-[markup]
-  [markup.goldmark]
-    [markup.goldmark.extensions]
-      definitionList = true
-      footnote = true
-      linkify = true
-      strikethrough = true
-      table = true
-      taskList = true
-      typographer = true
-    [markup.goldmark.parser]
-      attribute = true
-      autoHeadingID = true
-      autoHeadingIDType = "github"
-    [markup.goldmark.renderer]
-      hardWraps = false
-      unsafe = true
-      xhtml = false

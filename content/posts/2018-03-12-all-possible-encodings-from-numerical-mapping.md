@@ -16,7 +16,7 @@ after I saw a practice problem that caught my eye. I got it from
 ## The problem
 
 Suppose we have a mapping of letters to numbers, or an encoding, such that
-$$a = 1, b = 2, \cdots z = 26$$.
+$a = 1, b = 2, \cdots z = 26$.
 
 Given a string of digits, find the number of possible ways that this message
 could be decoded.
@@ -26,16 +26,19 @@ For example, `111` has three different mappings:
 | 1   | 1   | 1   |
 | --- | --- | --- |
 | a   | a   | a   |
+
 Table: Mapping 1
 
 | 11  | 1   |
 | --- | --- |
 | k   | a   |
+
 Table: Mapping 2
 
 | 1   | 11  |
 | --- | --- |
 | a   | k   |
+
 Table: Mapping 3
 
 ## The approach
@@ -72,13 +75,13 @@ and that every pair of digits _can_ correspond to a letter.
 The first thing that came to mind for me is that this problem can be broken down
 into recursive subproblems.
 
-Suppose $$ s $$ is a string, and $$ s_i $$ represents the string from elements
-0 to the $$ i^{th} $$ element.
+Suppose $s$ is a string, and $s_i$ represents the string from elements
+0 to the $i^{th}$ element.
 
-The number of ways $$ s*i $$ can be interpreted is equal to the number of ways
-$$ s*{i - 1} $$ can be interpreted, unless the last two characters form a letter
-(that is, $$0 < s* (i - 1) * 10 + s* (i - 2) \leq 26$$). Then we have the number
-of ways that $$ s*(i - 1) $$ can be interpreted and all the ways $$ s * (i - 2) $$
+The number of ways $s * i$ can be interpreted is equal to the number of ways
+$s * {i - 1}$ can be interpreted, unless the last two characters form a letter
+(that is, $0 < s * (i - 1) * 10 + s * (i - 2) \leq 26$). Then we have the number
+of ways that $s*(i - 1)$ can be interpreted and all the ways $s * (i - 2)$
 can be interpreted.
 
 In recursion, it's really important to sort of just trust the recursive property.
@@ -86,7 +89,7 @@ It can be hard to wrap your head around, and sometimes you might even overthink
 it and convince yourself you're wrong, but as long as you have your subproblems
 defined correctly and good base cases, you will be fine.
 
-Our base cases are $$ s_0 $$ and $$ s_1 $$. They can both be interpreted in only
+Our base cases are $s_0$ and $s_1$. They can both be interpreted in only
 one way.
 
 ```python
@@ -117,8 +120,8 @@ This is not the most efficient way to go about this, however. We can optimize
 this further by memoizing. You may notice that this problem has a very
 familiar structure. We can break it down as such:
 
-Suppose $$ f(x) $$ is the function that returns the number of ways some string
-$$ x $$ can be decoded. Then $$ f(x) = f(x*{n - 1}) + f(x*{n - 2}) $$. Of course,
+Suppose $f(x)$ is the function that returns the number of ways some string
+$x$ can be decoded. Then $f(x) = f(x*{n - 1}) + f(x*{n - 2})$. Of course,
 the second part of that statement is conditional, we have to check whether two
 letters can be decoded to a letter (e.g. are they less than or equal to 26),
 but this is very close to the recursive equation for the Fibonacci sequence.
@@ -131,9 +134,9 @@ subproblem in an area. This is called
 
 In this situation, suppose we have some array `A`. We will enforce that `A[i]`
 returns the number of ways that the subset of the string from the first
-character up to the $$ i - 1^{th} $$ character can be decoded. If we see that
+character up to the $i - 1^{th}$ character can be decoded. If we see that
 two characters can be decoded as a character, we will add the number of ways
-that the substring from $$0$$ to $$ i - 2 $$ can be interpreted (that's just
+that the substring from $0$ to $i - 2$ can be interpreted (that's just
 the string if we remove the pair of characters we just looked at).
 
 In a way, we're almost looking at paths. How many ways can we traverse the
@@ -166,12 +169,12 @@ def dp_count(s :str) -> int:
     return cache[-1]
 ```
 
-Now we have a solution with $$ O(n) $$ space and time complexity, which is as
+Now we have a solution with $O(n)$ space and time complexity, which is as
 efficient as you can get.
 
 A nice little trick you can use to determine what the best possible efficiency
 for a particular problem is to think about how you would go about solving the
-problem. To me, it makes sense that this is an $$ O(n) $$ problem because we
+problem. To me, it makes sense that this is an $O(n)$ problem because we
 have to look at all of the elements in the string/byte array at least once if
 we want to find out how many ways there are to decode it. We also know that
 we only have to look at up to two characters at any point because the upper

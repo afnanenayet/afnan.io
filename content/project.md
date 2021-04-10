@@ -6,6 +6,10 @@ description: "Personal projects and other work"
 disableComments: true
 ---
 
+## [diffsitter](https://github.com/afnanenayet/diffsitter)
+
+A semantic difftool that parses a file's AST to compute more meaningful diffs.
+
 ## [oars](https://github.com/afnanenayet/oars)
 
 A rust library for orthogonal array generation and verification. It contains
@@ -50,18 +54,6 @@ once.
 
 `cttp` uses the `pthreads` library and [cmocka](http://cmocka.org)
 to manage unit testing. Travis CI is used for deployment and testing.
-
-## [afnan.io](http://afnan.io)
-
-A personal website/blog powered by Jekyll and Travis CI. Pushing to
-Github triggers a build from Travis, which ensures that the website
-builds properly. You're looking at it right now!
-
-## [Matasano Cryptopals Challenge](https://github.com/afnanenayet/Cryptopals_Challenge)
-
-I am working on the Matasano Cryptopals Challenge, a set of challenges designed
-to teach some of the basics of cryptography. The challenges can be found
-[here](https://cryptopals.com).
 
 ## tiny search engine (TSE)
 

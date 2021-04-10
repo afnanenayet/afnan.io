@@ -10,8 +10,6 @@ breadth, first, search, concurrency]
 comments: true
 ---
 
-_You can find the link to the actual code [here](https://github.com/blendlabs/go-taskrunner)._
-
 ## The problem
 
 Right now, I'm a software engineering intern on the infrastructure team at
