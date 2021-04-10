@@ -10,7 +10,8 @@ markup: mmark
 ## The Motivation Behind `oars`
 
 For a while now, I have been working on a library called
-[oars](https://github.com/afnanenayet/oars) (*o*rthogonal *a*rrays *r*u*s*t).
+[oars](https://github.com/afnanenayet/oars) (**o**rthogonal **a**rrays
+**r**u**s**t).
 
 The need for this library was born out of the work we were doing on my
 Bachelor's [thesis](/documents/undergrad_thesis.pdf) and related EGSR
@@ -23,8 +24,8 @@ and visualizations to ensure that these points were correct (i.e. valid
 orthogonal arrays). As I attempted to implement more complex methods, I found
 that I was having a more difficult time catching small errors, and that I was
 having a tough time verifying my work in general.  I decided to go ahead and
-create something new that would hopefully help me with my work, and be a little
-more conducive to my workflow.
+create something new that would hopefully help me with my work and allow for
+faster iteration.
 
 ## Orthogonal Arrays
 
@@ -75,33 +76,33 @@ combination of levels for each factor?
 
 There is a property of orthogonal arrays called *strength*. The strength of an
 orthogonal array is an integer that must be less than the number of factors.
-For an orthogonal array to have a strength $$t$$ means that if you select any $$t$$
-factors in the orthogonal array, you are guaranteed to find every $$t$$-tuple of
+For an orthogonal array to have a strength $t$ means that if you select any $t$
+factors in the orthogonal array, you are guaranteed to find every $t$-tuple of
 the levels.
 
-Let's break it down even further. Let's suppose $$t=2$$. For our levels, which we
-can define as the set $$\{0, 1, 2\}$$, every 2-tuple consists of the following:
+Let's break it down even further. Let's suppose $t=2$. For our levels, which we
+can define as the set $\{0, 1, 2\}$, every 2-tuple consists of the following:
 
-* $$(0, 0)$$
-* $$(0, 1)$$
-* $$(0, 2)$$
-* $$(1, 0)$$
-* $$(1, 1)$$
-* $$(1, 2)$$
-* $$(2, 0)$$
-* $$(2, 1)$$
-* $$(2, 2)$$
+* $(0, 0)$
+* $(0, 1)$
+* $(0, 2)$
+* $(1, 0)$
+* $(1, 1)$
+* $(1, 2)$
+* $(2, 0)$
+* $(2, 1)$
+* $(2, 2)$
 
 This is the same as taking every possible combination of two numbers from the
 set we defined above. Now we can take any 2 columns from the orthogonal array,
 and those two columns will form this complete list. Of course, we can extend
 this all the way up however many factors there are. So for this case, we can
-have $$t = \{1, 2, 3\}$$.
+have $t = \{1, 2, 3\}$.
 
 I mentioned earlier that the purpose of orthogonal arrays is to create
 *efficient* experiment designs, and we don't want to use every possible
-combination (of which there are $$s^t$$ where $$s$$ is the number of levels and
-$$t$$ is the number of factors), since that leads to many trials, probably more
+combination (of which there are $s^t$ where $s$ is the number of levels and
+$t$ is the number of factors), since that leads to many trials, probably more
 than you need. You might realize that when the strength is equal to the number
 of factors, we have exactly that case. In the literature, this is a special
 degenerate case of an orthogonal array referred as a *full factorial design*.
@@ -127,12 +128,14 @@ I am going to assume you are familiar with Monte Carlo integration. If you are
 not, there are a lot of resources out on the internet that explain this
 technique in finer detail.
 
-Suppose you want to integrate a function, $$f(x)$$. It's a really hard function
-to integrate, so you can generate a bunch of random numbers for $$x$$, evaluate
-$$f(x)$$ for each random input, and then take the average of those numbers to get
+Suppose you want to integrate a function, $f(x)$. It's a really hard function
+to integrate, so you can generate a bunch of random numbers for $x$, evaluate
+$f(x)$ for each random input, and then take the average of those numbers to get
 an approximation of the integrand. We can pack this into a nice equation:
 
-$$ \int_0^1 f(x) = \frac{1}{N} \sum_{i = 0}^N f(\bar{x}) $$
+$$
+\int_0^1 f(x) = \frac{1}{N} \sum_{i = 0}^N f(\bar{x})
+$$
 
 It looks complicated, but the idea is very simple and intuitive. Of course, you
 may be wondering, what do orthogonal arrays have to do with Monte Carlo
