@@ -5,7 +5,7 @@ theme = "black-and-light"
 pygmentscodefences  = true
 pygmentsUseClasses = true
 canonifyurls = true
-disableKinds = ["RSS", "term", "taxonomy", "section"]
+disableKinds = ["taxonomy", "term"]
 
 [params]
     author = "Afnan Enayet"
