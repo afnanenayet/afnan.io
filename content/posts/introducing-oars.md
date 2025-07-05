@@ -4,7 +4,6 @@ description: "A Rust library for handling orthogonal arrays"
 date: 2019-06-14T21:47:21-04:00
 tags: ["orthogonal", "array", "rust", "library", "monte", "carlo"]
 math: true
-markup: mmark
 ---
 
 ## The Motivation Behind `oars`
