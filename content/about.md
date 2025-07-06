@@ -6,7 +6,7 @@ description: "Information about me, my work, and my academics"
 disableComments: true
 ---
 
-I'm a quantitative research engineer currently in Chicago. I studied Computer
+I'm a quantitative developer in NYC. I studied Computer
 Science at Dartmouth College. I'm very into cycling, playing guitar, and
 photography.
 
@@ -29,8 +29,9 @@ available on the usual public key servers. You can also access it
 
 ### Professional
 
-* Quantitative Research Engineer on Global Quantitative Strategies
-  (GQS) at Citadel (current)
+* Quantitative Developer at [Millennium](https://www.mlp.com/) (2025 - present)
+* Quantitative Research Engineer at Citadel/Global Quantitative Strategies
+  (GQS) (2020 - 2024)
 * Software engineer at Blend Labs on the infrastructure team (2019 - 2020)
 * Interned at Capital One doing machine learning work with Payments API team
   (2018)
