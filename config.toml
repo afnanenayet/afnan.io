@@ -1,37 +1,39 @@
 baseURL = "https://afnan.io"
 languageCode = "en-us"
 title = "Afnan Enayet"
-theme = "black-and-light"
+theme = "hugo-theme-monochrome"
 pygmentscodefences = true
 pygmentsUseClasses = true
 canonifyurls = true
 disableKinds = ["taxonomy", "term"]
+
+[outputs]
+home = ["HTML", "RSS", "JSON"]
 
 [params]
 author = "Afnan Enayet"
 sitename = "Afnan Enayet"
 description = "A personal site"
 githubUsername = "afnanenayet"
-accent = "red"
 showBorder = true
 backgroundColor = "white"
-font = "Source Sans Pro"                                 # should match the name on Google Fonts!
+font = "Source Sans Pro"
 highlight = true
-highlightStyle = "xcode"
-highlightLanguages = ["rust", "cpp", "python", "golang"]
+highlightLanguages = ["rust", "cpp", "python", "golang", "haskell"]
 katexVersion = "0.13.1"
 
-[[menu.main]]
+
+[[menu.navbar]]
 url = "/about/"
 name = "About"
 weight = 1
 
-[[menu.main]]
+[[menu.navbar]]
 url = "/project/"
 name = "Projects"
 weight = 2
 
-[[menu.main]]
+[[menu.navbar]]
 url = "https://github.com/afnanenayet"
 name = "Github"
 weight = 3

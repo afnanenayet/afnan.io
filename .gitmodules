@@ -2,3 +2,6 @@
 	path = themes/black-and-light
 	url = https://github.com/afnanenayet/hugo-black-and-light-theme.git
 
+[submodule "themes/themes/hugo-theme-monochrome"]
+	path = themes/themes/hugo-theme-monochrome
+	url = https://github.com/kaiiiz/hugo-theme-monochrome.git
