@@ -4,6 +4,7 @@ permalink: /about/
 description: "Information about me, my work, and my academics"
 disableComments: true
 toc: false
+search_hidden: true
 ---
 
 # About

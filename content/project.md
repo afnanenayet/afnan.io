@@ -5,6 +5,7 @@ title: Projects
 description: "Personal projects and other work"
 disableComments: true
 toc: false
+search_hidden: true
 ---
 
 # Projects
