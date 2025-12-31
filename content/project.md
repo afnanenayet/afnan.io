@@ -4,7 +4,11 @@ permalink: /projects/
 title: Projects
 description: "Personal projects and other work"
 disableComments: true
+toc: false
+search_hidden: true
 ---
+
+# Projects
 
 ## [diffsitter](https://github.com/afnanenayet/diffsitter)
 

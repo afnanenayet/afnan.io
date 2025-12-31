@@ -1,10 +1,13 @@
 ---
-layout: page
 title: About
 permalink: /about/
 description: "Information about me, my work, and my academics"
 disableComments: true
+toc: false
+search_hidden: true
 ---
+
+# About
 
 I'm a quantitative developer in NYC. I studied Computer
 Science at Dartmouth College. I'm very into cycling, playing guitar, and

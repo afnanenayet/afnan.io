@@ -53,7 +53,6 @@ trials.
 
 First, let's look at an orthogonal array and see how it relates to experiments.
 
-{.table .table-striped}
 sunlight | water | fertilizer
 ---------|-------|-----------
  0 | 0 | 0
